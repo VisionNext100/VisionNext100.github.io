@@ -22,7 +22,8 @@ DataVis HW1
     ├── main.py
     ├── README.md
     └── requirements.txt 
-```
+```  
+---
 
 ### 四、核心功能
 1. **基础要求实现**
@@ -35,8 +36,11 @@ DataVis HW1
    - 多空间转换: 支持在 RGB 与 LAB 颜色空间下执行聚类。
    - 前后端分离架构: 为了保护 API Key 的安全，项目采用了后端代理模式。前端不直接暴露敏感信息，调用模型的请求由 FastAPI 后端转发。
    - AI 智能评估: 结合 LLM 对提取的颜色组合进行审美分析，并给出具体的色彩改进建议。
-   - 工程规范: 使用 `.env` 管理环境变量，并配有完善的 CORS 跨域处理机制。  
-   - 构建github.io。
+   - 工程规范: 使用 `.env` 管理环境变量，并配配置 CORS 跨域处理机制。  
+   - 在线演示：构建github.io主页作为静态展示窗口：[https://visionnext100.github.io/](https://visionnext100.github.io/)。如需查看源码仓库，请访问：[https://github.com/VisionNext100/VisionNext100.github.io](https://github.com/VisionNext100/VisionNext100.github.io)。
+```
+GitHub Pages 仅作前端静态功能展示。色彩分析功能因涉及 API 密钥安全，需克隆本仓库并在本地启动 FastAPI 后端方可体验。
+```
 ---
 
 ### 五、算法思想
@@ -50,7 +54,7 @@ DataVis HW1
    - LAB 转 RGB：将聚类中心还原为可显示的色彩值。  
 ---
 
-### 六、环境配置与运行
+### 六、快速复现
 1. **后端启动**
     - 安装依赖: `pip install -r requirements.txt`；
     - 配置密钥: 在 `.env` 文件中填入 `OPENAI_API_KEY`；
@@ -58,4 +62,17 @@ DataVis HW1
 
 2. **前端运行**
    - 使用 VS Code 的 Live Server 插件打开 `index.html`；
-   - 确保前端访问地址为 `http://127.0.0.1:5500` 以通过 CORS 验证。
+   - 确保前端访问地址为 `http://127.0.0.1:5500` 以通过 CORS 验证。  
+---  
+### 七、作品截图
+<div align="center">
+    <img src="Portfolio_Screenshot_1.png" width="800" alt="项目界面截图">
+    <br>
+    <em>图1：ECharts 可视化结果与 Anaconda 终端日志（聚类数：5，颜色空间：RGB，可视化样式：Pie Chart）</em>
+</div>  
+<br>
+<div align="center">
+    <img src="Portfolio_Screenshot_2.png" width="800" alt="项目界面截图">
+    <br>
+    <em>图2：ECharts 可视化结果全屏展示（聚类数：7，颜色空间：LAB，可视化样式：Bar Chart）</em>
+</div>
