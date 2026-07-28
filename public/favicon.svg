@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Yehan Wang">
-  <rect width="64" height="64" rx="14" fill="#1B3A4B"/>
-  <text x="32" y="40" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#E8F1F5" letter-spacing="1">YW</text>
+  <rect width="64" height="64" rx="14" fill="#F4F1EA"/>
+  <path d="M14 48 L28 16 L32 28 L36 16 L50 48" fill="none" stroke="#1B3A4B" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 16 L32 28 L36 16" fill="none" stroke="#1F7A70" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="42" cy="18" r="2.2" fill="#1F7A70"/>
+  <circle cx="48" cy="24" r="1.5" fill="#1B3A4B"/>
+  <circle cx="45" cy="29" r="1.2" fill="#1F7A70"/>
+  <path d="M42 18 L48 24 L45 29" fill="none" stroke="#1F7A70" stroke-width="1.2" opacity="0.7"/>
 </svg>

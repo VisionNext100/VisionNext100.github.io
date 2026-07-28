@@ -32,8 +32,9 @@
 
 .home__name {
   font-size: clamp(2.8rem, 6vw, 4.4rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
   margin-bottom: 1.1rem;
 }
 

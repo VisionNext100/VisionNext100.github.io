@@ -1,6 +1,6 @@
 .education__timeline {
   position: relative;
-  max-width: 46rem;
+  max-width: 56rem;
   margin-left: 0.5rem;
   padding-left: 1.6rem;
 }
@@ -23,13 +23,39 @@
 .education__dot {
   position: absolute;
   left: -1.42rem;
-  top: 1.35rem;
+  top: 1.55rem;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--accent);
   border: 3px solid #fff;
   box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.35);
+}
+
+.education__row {
+  display: grid;
+  grid-template-columns: minmax(160px, 210px) minmax(0, 1fr);
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.education__when {
+  padding-right: 0.25rem;
+}
+
+.education__period {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.education__place {
+  margin-top: 0.35rem;
+  color: var(--ink-faint);
+  font-size: 0.92rem;
 }
 
 .education__card {
@@ -47,11 +73,11 @@
 .education__logo {
   width: 92px;
   height: 92px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #fff;
-  padding: 0.35rem;
+  border-radius: 0;
+  overflow: visible;
+  border: none;
+  background: transparent;
+  padding: 0;
 }
 
 .education__logo img {
@@ -62,6 +88,7 @@
 
 .education__text h3 {
   font-size: 1.15rem;
+  font-style: italic;
 }
 
 .education__degree {
@@ -70,15 +97,20 @@
   color: var(--accent-deep);
 }
 
-.education__meta {
-  margin-top: 0.25rem;
-  color: var(--ink-faint);
-  font-size: 0.92rem;
-}
-
 .education__details {
   margin-top: 0.7rem;
   color: var(--ink-soft);
+}
+
+@media (max-width: 760px) {
+  .education__row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .education__when {
+    padding-left: 0.1rem;
+  }
 }
 
 @media (max-width: 560px) {

@@ -19,19 +19,22 @@ export function Education() {
             <SectionReveal key={item.school} delay={0.06 * i}>
               <article className="education__item">
                 <div className="education__dot" aria-hidden="true" />
-                <div className="education__card">
-                  <div className="education__logo">
-                    <img src={item.logo} alt="" loading="lazy" />
+                <div className="education__row">
+                  <div className="education__when">
+                    <p className="education__period">{item.period}</p>
+                    <p className="education__place">{item.location}</p>
                   </div>
-                  <div className="education__text">
-                    <h3>{item.school}</h3>
-                    <p className="education__degree">{item.degree}</p>
-                    <p className="education__meta">
-                      {item.period} · {item.location}
-                    </p>
-                    {item.details ? (
-                      <p className="education__details">{item.details}</p>
-                    ) : null}
+                  <div className="education__card">
+                    <div className="education__logo">
+                      <img src={item.logo} alt="" loading="lazy" />
+                    </div>
+                    <div className="education__text">
+                      <h3>{item.school}</h3>
+                      <p className="education__degree">{item.degree}</p>
+                      {item.details ? (
+                        <p className="education__details">{item.details}</p>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </article>

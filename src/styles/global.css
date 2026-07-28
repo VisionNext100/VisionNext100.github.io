@@ -12,7 +12,7 @@
   --shadow: 0 12px 40px rgba(27, 58, 75, 0.08);
   --nav-h: 4.25rem;
   --radius: 14px;
-  --font-display: 'Sora', sans-serif;
+  --font-display: 'Times New Roman', Times, 'Liberation Serif', 'Noto Serif', serif;
   --font-body: 'DM Sans', sans-serif;
   --max: 1120px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -75,8 +75,15 @@ h2,
 h3 {
   font-family: var(--font-display);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin: 0;
+}
+
+.section__title {
+  font-size: clamp(1.85rem, 3vw, 2.4rem);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  font-weight: 700;
 }
 
 p {
@@ -100,11 +107,6 @@ p {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent-deep);
-  margin-bottom: 0.75rem;
-}
-
-.section__title {
-  font-size: clamp(1.85rem, 3vw, 2.4rem);
   margin-bottom: 0.75rem;
 }
 

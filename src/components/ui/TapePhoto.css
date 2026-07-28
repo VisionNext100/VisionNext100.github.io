@@ -1,6 +1,6 @@
 .tape-photo {
   position: relative;
-  width: min(100%, 340px);
+  width: min(100%, 380px);
   margin-inline: auto;
   transform: rotate(3deg);
   filter: drop-shadow(0 18px 28px rgba(27, 58, 75, 0.18));
@@ -14,10 +14,13 @@
 
 .tape-photo__img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
   border: 10px solid #fff;
   background: #fff;
+  display: block;
 }
 
 .tape-photo__tape {

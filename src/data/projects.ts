@@ -62,7 +62,7 @@ export const projects: Project[] = [
     image: '/images/projects/project-mlfq.png',
     repoUrl:
       'https://github.com/VisionNext100/A-Smart-MLFQ-Project-Based-on-uCore',
-    languages: ['Assembly', 'C'],
+    languages: ['Assembly'],
   },
   {
     title: 'Smart Course Scheduler',

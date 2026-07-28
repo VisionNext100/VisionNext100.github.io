@@ -12,13 +12,13 @@
 .internship__brand {
   width: 132px;
   height: 132px;
-  border-radius: 18px;
+  border-radius: 0;
   display: grid;
   place-items: center;
-  background: #fff;
-  border: 1px solid var(--line);
-  overflow: hidden;
-  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  overflow: visible;
+  padding: 0;
 }
 
 .internship__brand img {
