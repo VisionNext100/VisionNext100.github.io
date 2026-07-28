@@ -1,5 +1,11 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type FormEvent } from 'react'
 import { SITE } from '../../data/site'
+import {
+  IP_LIMIT,
+  canSubmitFromIp,
+  recordIpSubmit,
+  resolveClientIp,
+} from '../../lib/contactRateLimit'
 import { SectionReveal } from '../ui/SectionReveal'
 import './Contact.css'
 
@@ -69,10 +75,39 @@ function looksLikeSpam(name: string, email: string, message: string) {
 export function Contact() {
   const [status, setStatus] = useState<Status>('idle')
   const [message, setMessage] = useState('')
+  const [panelHeight, setPanelHeight] = useState<number | null>(null)
   const mountedAt = useRef(Date.now())
+  const visualRef = useRef<HTMLDivElement>(null)
+  const imgRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
     mountedAt.current = Date.now()
+  }, [])
+
+  useEffect(() => {
+    const syncHeight = () => {
+      const img = imgRef.current
+      if (!img) return
+      const h = img.getBoundingClientRect().height
+      if (h > 0) setPanelHeight(Math.round(h))
+    }
+
+    const img = imgRef.current
+    if (img?.complete) syncHeight()
+    img?.addEventListener('load', syncHeight)
+    window.addEventListener('resize', syncHeight)
+
+    const ro =
+      visualRef.current && 'ResizeObserver' in window
+        ? new ResizeObserver(syncHeight)
+        : null
+    if (visualRef.current && ro) ro.observe(visualRef.current)
+
+    return () => {
+      img?.removeEventListener('load', syncHeight)
+      window.removeEventListener('resize', syncHeight)
+      ro?.disconnect()
+    }
   }, [])
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -113,6 +148,15 @@ export function Contact() {
       return
     }
 
+    const clientIp = await resolveClientIp()
+    if (!canSubmitFromIp(clientIp)) {
+      setStatus('error')
+      setMessage(
+        `This network has reached the limit of ${IP_LIMIT.max} messages per ${IP_LIMIT.windowHours} hours. Please try again tomorrow.`,
+      )
+      return
+    }
+
     const formId = SITE.formspreeId?.trim()
     if (!formId || formId === 'your_form_id_here') {
       setStatus('error')
@@ -139,8 +183,15 @@ export function Contact() {
         headers: { Accept: 'application/json' },
       })
 
+      if (res.status === 429) {
+        setStatus('error')
+        setMessage('Too many requests. Please try again later.')
+        return
+      }
+
       if (!res.ok) throw new Error('Request failed')
       localStorage.setItem(STORAGE_KEY, String(Date.now()))
+      recordIpSubmit(clientIp)
       setStatus('success')
       setMessage('Thanks — your message was sent.')
       form.reset()
@@ -164,15 +215,25 @@ export function Contact() {
 
         <SectionReveal delay={0.08}>
           <div className="contact__layout">
-            <div className="contact__visual">
+            <div className="contact__visual" ref={visualRef}>
               <img
+                ref={imgRef}
                 src={SITE.contactImage}
                 alt="Illustration of sending a message"
                 loading="lazy"
               />
             </div>
 
-            <form className="contact__form" onSubmit={onSubmit} noValidate>
+            <form
+              className="contact__form"
+              onSubmit={onSubmit}
+              noValidate
+              style={
+                panelHeight
+                  ? ({ height: panelHeight } satisfies CSSProperties)
+                  : undefined
+              }
+            >
               {/* Honeypot field — visually hidden from humans */}
               <div className="contact__honeypot" aria-hidden="true">
                 <label>

@@ -3,37 +3,37 @@ export type SkillGroup = {
   items: { name: string; icon?: string; initial?: string }[]
 }
 
-/** Simple Icons CDN (https://simpleicons.org) */
-const icon = (slug: string) =>
-  `https://cdn.simpleicons.org/${slug}/1B3A4B`
+/** Prefer local icons for reliability; Simple Icons CDN as fallback for common brands */
+const si = (slug: string) =>
+  `https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${slug}.svg`
 
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Languages',
     items: [
-      { name: 'C / C++', icon: icon('cplusplus') },
-      { name: 'Python', icon: icon('python') },
-      { name: 'JavaScript', icon: icon('javascript') },
-      { name: 'HTML', icon: icon('html5') },
-      { name: 'CSS', icon: icon('css3') },
+      { name: 'C / C++', icon: si('cplusplus') },
+      { name: 'Python', icon: si('python') },
+      { name: 'JavaScript', icon: si('javascript') },
+      { name: 'HTML', icon: si('html5') },
+      { name: 'CSS', icon: '/images/skills/css.svg' },
     ],
   },
   {
     title: 'AI & Data',
     items: [
-      { name: 'PyTorch', icon: icon('pytorch') },
-      { name: 'AutoGluon', initial: 'AG' },
-      { name: 'MySQL', icon: icon('mysql') },
-      { name: 'Streamlit', icon: icon('streamlit') },
+      { name: 'PyTorch', icon: si('pytorch') },
+      { name: 'AutoGluon', icon: '/images/skills/autogluon.png' },
+      { name: 'MySQL', icon: si('mysql') },
+      { name: 'Streamlit', icon: si('streamlit') },
     ],
   },
   {
     title: 'Tools',
     items: [
-      { name: 'Docker', icon: icon('docker') },
-      { name: 'Dify', initial: 'DF' },
-      { name: 'Qt Creator', icon: icon('qt') },
-      { name: 'Git', icon: icon('git') },
+      { name: 'Docker', icon: si('docker') },
+      { name: 'Dify', icon: '/images/skills/dify.svg' },
+      { name: 'Qt Creator', icon: si('qt') },
+      { name: 'Git', icon: si('git') },
     ],
   },
 ]
