@@ -16,6 +16,6 @@ export const education: EducationItem[] = [
     location: 'Shanghai, China',
     logo: '/images/brands/ECNU_Logo.jpg',
     details:
-      'Undergraduate studies focusing on AI systems and software engineering.',
+      'Undergraduate studies focusing on Computer Science and Technology.',
   },
 ]
