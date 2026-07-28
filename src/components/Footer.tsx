@@ -36,7 +36,7 @@ export function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <p>
-          © {year} {SITE.shortName}. All rights reserved.
+          © {year} {SITE.githubUser}@GitHub.com
         </p>
         <div className="footer__links">
           <button

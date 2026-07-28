@@ -1,46 +1,19 @@
 .education__timeline {
   position: relative;
   max-width: 56rem;
-  margin-left: 0.5rem;
-  padding-left: 1.6rem;
-}
-
-.education__timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.35rem;
-  top: 0.35rem;
-  bottom: 0.35rem;
-  width: 2px;
-  background: linear-gradient(180deg, var(--accent), rgba(27, 58, 75, 0.15));
 }
 
 .education__item {
-  position: relative;
+  display: grid;
+  grid-template-columns: minmax(150px, 200px) 28px minmax(0, 1fr);
+  gap: 0.85rem 1rem;
+  align-items: center;
   padding-bottom: 1.6rem;
 }
 
-.education__dot {
-  position: absolute;
-  left: -1.42rem;
-  top: 1.55rem;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.35);
-}
-
-.education__row {
-  display: grid;
-  grid-template-columns: minmax(160px, 210px) minmax(0, 1fr);
-  gap: 1.1rem;
-  align-items: center;
-}
-
 .education__when {
-  padding-right: 0.25rem;
+  text-align: right;
+  padding-right: 0.15rem;
 }
 
 .education__period {
@@ -58,6 +31,41 @@
   font-size: 0.92rem;
 }
 
+.education__axis {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+
+.education__axis::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: -1.6rem;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--accent), rgba(27, 58, 75, 0.15));
+}
+
+.education__item:last-child .education__axis::before {
+  bottom: 50%;
+}
+
+.education__dot {
+  position: relative;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  margin-top: 1.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.35);
+  flex-shrink: 0;
+}
+
 .education__card {
   display: grid;
   grid-template-columns: 92px 1fr;
@@ -73,8 +81,6 @@
 .education__logo {
   width: 92px;
   height: 92px;
-  border-radius: 0;
-  overflow: visible;
   border: none;
   background: transparent;
   padding: 0;
@@ -103,13 +109,29 @@
 }
 
 @media (max-width: 760px) {
-  .education__row {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+  .education__item {
+    grid-template-columns: 22px minmax(0, 1fr);
+    grid-template-areas:
+      'axis when'
+      'axis card';
+    gap: 0.45rem 0.85rem;
   }
 
   .education__when {
-    padding-left: 0.1rem;
+    grid-area: when;
+    text-align: left;
+  }
+
+  .education__axis {
+    grid-area: axis;
+  }
+
+  .education__card {
+    grid-area: card;
+  }
+
+  .education__dot {
+    margin-top: 0.55rem;
   }
 }
 
