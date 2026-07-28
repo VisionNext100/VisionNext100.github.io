@@ -1,0 +1,9 @@
+.publications__placeholder {
+  padding: 2.5rem 1.5rem;
+  border-radius: 18px;
+  border: 1px dashed rgba(27, 58, 75, 0.22);
+  background: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 1.02rem;
+}
