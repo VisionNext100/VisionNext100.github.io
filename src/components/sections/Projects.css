@@ -7,6 +7,8 @@
 
 .projects__lead {
   margin-bottom: 0;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .projects__github {
@@ -29,6 +31,12 @@
 .projects__github:hover {
   transform: translateY(-2px) scale(1.04);
   background: var(--accent-deep);
+}
+
+@media (max-width: 980px) {
+  .projects__lead {
+    white-space: normal;
+  }
 }
 
 .projects__grid {

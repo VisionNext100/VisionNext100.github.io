@@ -13,7 +13,7 @@
   --nav-h: 4.25rem;
   --radius: 14px;
   --font-display: 'Times New Roman', Times, 'Liberation Serif', 'Noto Serif', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-body: Cambria, 'Times New Roman', Times, Georgia, serif;
   --max: 1180px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }

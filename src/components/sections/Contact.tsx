@@ -5,6 +5,39 @@ import './Contact.css'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
+function IconPerson() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12zm0 2.25c-3.6 0-8.25 1.8-8.25 5.25V21h16.5v-1.5c0-3.45-4.65-5.25-8.25-5.25z"
+      />
+    </svg>
+  )
+}
+
+function IconMail() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
+      />
+    </svg>
+  )
+}
+
+function IconMessage() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 14H5.2L4 17.2V4h16v12z"
+      />
+    </svg>
+  )
+}
+
 const MAX_NAME = 80
 const MAX_EMAIL = 120
 const MAX_MESSAGE = 1200
@@ -153,33 +186,40 @@ export function Contact() {
                 </label>
               </div>
 
-              <div className="contact__row">
-                <label>
-                  Name
-                  <input
-                    name="name"
-                    type="text"
-                    required
-                    maxLength={MAX_NAME}
-                    autoComplete="name"
-                  />
-                </label>
-                <label>
-                  Email
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    maxLength={MAX_EMAIL}
-                    autoComplete="email"
-                  />
-                </label>
-              </div>
               <label>
-                Message
+                <span className="contact__label">
+                  <IconPerson />
+                  Name
+                </span>
+                <input
+                  name="name"
+                  type="text"
+                  required
+                  maxLength={MAX_NAME}
+                  autoComplete="name"
+                />
+              </label>
+              <label>
+                <span className="contact__label">
+                  <IconMail />
+                  Email
+                </span>
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={MAX_EMAIL}
+                  autoComplete="email"
+                />
+              </label>
+              <label className="contact__message">
+                <span className="contact__label">
+                  <IconMessage />
+                  Message
+                </span>
                 <textarea
                   name="message"
-                  rows={3}
+                  rows={6}
                   required
                   maxLength={MAX_MESSAGE}
                   minLength={MIN_MESSAGE}
