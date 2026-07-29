@@ -6,6 +6,17 @@ export type Project = {
   languages: string[]
 }
 
+export const upcomingProjects: Project[] = [
+  {
+    title: 'AdenoGuard',
+    description:
+      'An AI-powered WeChat mini-program for pediatric adenoid hypertrophy screening and surgical decision support. The GitHub repository will be open-sourced after the software copyright registration is approved.',
+    image: '/images/projects/project-adenoguard.png',
+    repoUrl: 'https://www.bilibili.com/video/BV1AHAbzkEAu',
+    languages: ['Python', 'JavaScript'],
+  },
+]
+
 export const projects: Project[] = [
   {
     title: 'Higgs Discovery Dashboard',

@@ -17,6 +17,12 @@
   font-size: 0.92rem;
 }
 
+.footer__inner > p {
+  font-family: 'Times New Roman', Times, 'Liberation Serif', serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .footer__links {
   display: flex;
   flex-wrap: wrap;

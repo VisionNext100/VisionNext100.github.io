@@ -46,6 +46,18 @@
   gap: 1.35rem;
 }
 
+.projects__subheader {
+  margin-top: 3.5rem;
+}
+
+.projects__subheader .section__title {
+  margin-bottom: 0.75rem;
+}
+
+.projects__grid--upcoming {
+  margin-top: 1.5rem;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
