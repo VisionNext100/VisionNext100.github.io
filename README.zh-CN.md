@@ -2,8 +2,6 @@
 
 [English](./README.md) | **中文**
 
-英文个人主页 → [visionnext100.github.io](https://visionnext100.github.io)
-
 ## 技术栈
 
 - Vite + React + TypeScript
@@ -11,11 +9,6 @@
 - Leaflet（旅行地图与运动轨迹）
 - Formspree（联系表单）
 - GitHub Actions → GitHub Pages
-
-## 以前页面为什么是空白的
-
-只把**源码**推到 `VisionNext100.github.io` 不够。  
-GitHub Pages 需要的是构建后的 **`dist/`**。本仓库已用 Actions 自动构建并部署。
 
 ## GitHub 一次性配置
 

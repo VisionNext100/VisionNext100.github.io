@@ -2,8 +2,6 @@
 
 **English** | [中文](./README.zh-CN.md)
 
-English personal site → [visionnext100.github.io](https://visionnext100.github.io)
-
 ## Stack
 
 - Vite + React + TypeScript
@@ -11,11 +9,6 @@ English personal site → [visionnext100.github.io](https://visionnext100.github
 - Leaflet (travel map & sports tracks)
 - Formspree (contact form)
 - GitHub Actions → GitHub Pages
-
-## Why the site was blank before
-
-Pushing the **source code** to `VisionNext100.github.io` is not enough.  
-GitHub Pages needs the **built** `dist/` output. This repo uses Actions to build and deploy automatically.
 
 ## One-time GitHub setup
 
