@@ -2,6 +2,15 @@
 
 **English** | [中文](./README.zh-CN.md)
 
+## Copyright
+
+© 2026 Yehan Wang (王业涵). All rights reserved.
+
+This repository is published for personal portfolio and deployment purposes only.
+No license is granted to use, copy, modify, distribute, or create derivative works
+from the source code, text, images, photos, videos, or data in this project
+without prior written permission from the copyright holder.
+
 ## Stack
 
 - Vite + React + TypeScript
