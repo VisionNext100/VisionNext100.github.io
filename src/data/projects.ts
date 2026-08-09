@@ -124,4 +124,12 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/VisionNext100/PendulumLab',
     languages: ['C++'],
   },
+  {
+    title: 'Blender-SimpleRT',
+    description:
+      'Minimal Python ray tracer inside Blender: shadow rays, Blinn-Phong shading, recursive reflection, Schlick Fresnel, and transmission. ECNU CG final based on Stanford CS148 HW3.',
+    image: '/images/projects/project-simplert.png',
+    repoUrl: 'https://github.com/VisionNext100/Blender-SimpleRT',
+    languages: ['Python'],
+  },
 ]
