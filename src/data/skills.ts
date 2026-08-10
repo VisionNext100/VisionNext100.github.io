@@ -14,6 +14,7 @@ export const skillGroups: SkillGroup[] = [
       { name: 'C / C++', icon: si('cplusplus') },
       { name: 'Python', icon: si('python') },
       { name: 'JavaScript', icon: si('javascript') },
+      { name: 'TypeScript', icon: si('typescript') },
       { name: 'HTML', icon: si('html5') },
       { name: 'CSS', icon: '/images/skills/css.svg' },
     ],
@@ -30,6 +31,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: 'Tools',
     items: [
+      { name: 'MCP', icon: si('modelcontextprotocol') },
       { name: 'Docker', icon: si('docker') },
       { name: 'Dify', icon: '/images/skills/dify.svg' },
       { name: 'Qt Creator', icon: si('qt') },
