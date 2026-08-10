@@ -28,6 +28,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+  font-family: 'Times New Roman', Times, 'Liberation Serif', serif;
 }
 
 .footer__links a:hover,
