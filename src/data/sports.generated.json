@@ -1,0 +1,422 @@
+[
+  {
+    "id": "2026-08-16_walking_48",
+    "type": "walking",
+    "date": "2026-08-16",
+    "distanceKm": 6.23,
+    "durationSec": 6105,
+    "durationLabel": "101'45''",
+    "geojson": "/data/sports/2026-08-16_walking_48.geojson",
+    "source": "20260816户外步行.gpx"
+  },
+  {
+    "id": "2026-08-08_cycling_47",
+    "type": "cycling",
+    "date": "2026-08-08",
+    "distanceKm": 7.8,
+    "durationSec": 2036,
+    "durationLabel": "33'56''",
+    "geojson": "/data/sports/2026-08-08_cycling_47.geojson",
+    "source": "20260808户外骑行.gpx"
+  },
+  {
+    "id": "2026-08-05_running_45",
+    "type": "running",
+    "date": "2026-08-05",
+    "distanceKm": 2.44,
+    "durationSec": 747,
+    "durationLabel": "12'27''",
+    "geojson": "/data/sports/2026-08-05_running_45.geojson",
+    "source": "20260805户外跑步.gpx"
+  },
+  {
+    "id": "2026-08-05_cycling_46",
+    "type": "cycling",
+    "date": "2026-08-05",
+    "distanceKm": 1.51,
+    "durationSec": 374,
+    "durationLabel": "6'14''",
+    "geojson": "/data/sports/2026-08-05_cycling_46.geojson",
+    "source": "20260805户外骑行.gpx"
+  },
+  {
+    "id": "2026-06-05_running_44",
+    "type": "running",
+    "date": "2026-06-05",
+    "distanceKm": 4.71,
+    "durationSec": 1555,
+    "durationLabel": "25'55''",
+    "geojson": "/data/sports/2026-06-05_running_44.geojson",
+    "source": "20260605户外跑步.gpx"
+  },
+  {
+    "id": "2026-05-31_walking_43",
+    "type": "walking",
+    "date": "2026-05-31",
+    "distanceKm": 2.54,
+    "durationSec": 2514,
+    "durationLabel": "41'54''",
+    "geojson": "/data/sports/2026-05-31_walking_43.geojson",
+    "source": "20260531户外步行.gpx"
+  },
+  {
+    "id": "2026-05-30_running_42",
+    "type": "running",
+    "date": "2026-05-30",
+    "distanceKm": 3.71,
+    "durationSec": 1123,
+    "durationLabel": "18'43''",
+    "geojson": "/data/sports/2026-05-30_running_42.geojson",
+    "source": "20260530户外跑步.gpx"
+  },
+  {
+    "id": "2026-05-26_walking_41",
+    "type": "walking",
+    "date": "2026-05-26",
+    "distanceKm": 2,
+    "durationSec": 1496,
+    "durationLabel": "24'56''",
+    "geojson": "/data/sports/2026-05-26_walking_41.geojson",
+    "source": "20260526户外步行.gpx"
+  },
+  {
+    "id": "2026-05-22_running_40",
+    "type": "running",
+    "date": "2026-05-22",
+    "distanceKm": 5.34,
+    "durationSec": 1557,
+    "durationLabel": "25'57''",
+    "geojson": "/data/sports/2026-05-22_running_40.geojson",
+    "source": "20260522户外跑步.gpx"
+  },
+  {
+    "id": "2026-05-18_running_39",
+    "type": "running",
+    "date": "2026-05-18",
+    "distanceKm": 5.34,
+    "durationSec": 1557,
+    "durationLabel": "25'57''",
+    "geojson": "/data/sports/2026-05-18_running_39.geojson",
+    "source": "20260518户外跑步.gpx"
+  },
+  {
+    "id": "2026-05-15_running_38",
+    "type": "running",
+    "date": "2026-05-15",
+    "distanceKm": 5.3,
+    "durationSec": 1555,
+    "durationLabel": "25'55''",
+    "geojson": "/data/sports/2026-05-15_running_38.geojson",
+    "source": "20260515户外跑步.gpx"
+  },
+  {
+    "id": "2026-05-10_running_37",
+    "type": "running",
+    "date": "2026-05-10",
+    "distanceKm": 5.33,
+    "durationSec": 1565,
+    "durationLabel": "26'05''",
+    "geojson": "/data/sports/2026-05-10_running_37.geojson",
+    "source": "20260510户外跑步.gpx"
+  },
+  {
+    "id": "2026-05-05_running_36",
+    "type": "running",
+    "date": "2026-05-05",
+    "distanceKm": 5.36,
+    "durationSec": 1549,
+    "durationLabel": "25'49''",
+    "geojson": "/data/sports/2026-05-05_running_36.geojson",
+    "source": "20260505户外跑步.gpx"
+  },
+  {
+    "id": "2026-05-02_running_35",
+    "type": "running",
+    "date": "2026-05-02",
+    "distanceKm": 3.67,
+    "durationSec": 1123,
+    "durationLabel": "18'43''",
+    "geojson": "/data/sports/2026-05-02_running_35.geojson",
+    "source": "20260502户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-27_running_34",
+    "type": "running",
+    "date": "2026-04-27",
+    "distanceKm": 5.33,
+    "durationSec": 1548,
+    "durationLabel": "25'48''",
+    "geojson": "/data/sports/2026-04-27_running_34.geojson",
+    "source": "20260427户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-25_running_33",
+    "type": "running",
+    "date": "2026-04-25",
+    "distanceKm": 5.4,
+    "durationSec": 1561,
+    "durationLabel": "26'01''",
+    "geojson": "/data/sports/2026-04-25_running_33.geojson",
+    "source": "20260425户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-21_running_32",
+    "type": "running",
+    "date": "2026-04-21",
+    "distanceKm": 5.74,
+    "durationSec": 1704,
+    "durationLabel": "28'24''",
+    "geojson": "/data/sports/2026-04-21_running_32.geojson",
+    "source": "20260421户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-18_running_31",
+    "type": "running",
+    "date": "2026-04-18",
+    "distanceKm": 5.77,
+    "durationSec": 1661,
+    "durationLabel": "27'41''",
+    "geojson": "/data/sports/2026-04-18_running_31.geojson",
+    "source": "20260418户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-15_running_30",
+    "type": "running",
+    "date": "2026-04-15",
+    "distanceKm": 6.16,
+    "durationSec": 1812,
+    "durationLabel": "30'12''",
+    "geojson": "/data/sports/2026-04-15_running_30.geojson",
+    "source": "20260415户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-12_running_29",
+    "type": "running",
+    "date": "2026-04-12",
+    "distanceKm": 5.33,
+    "durationSec": 1581,
+    "durationLabel": "26'21''",
+    "geojson": "/data/sports/2026-04-12_running_29.geojson",
+    "source": "20260412户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-09_walking_28",
+    "type": "walking",
+    "date": "2026-04-09",
+    "distanceKm": 1.01,
+    "durationSec": 865,
+    "durationLabel": "14'25''",
+    "geojson": "/data/sports/2026-04-09_walking_28.geojson",
+    "source": "20260409户外步行.gpx"
+  },
+  {
+    "id": "2026-04-07_running_27",
+    "type": "running",
+    "date": "2026-04-07",
+    "distanceKm": 5.34,
+    "durationSec": 1604,
+    "durationLabel": "26'44''",
+    "geojson": "/data/sports/2026-04-07_running_27.geojson",
+    "source": "20260407户外跑步.gpx"
+  },
+  {
+    "id": "2026-04-05_running_26",
+    "type": "running",
+    "date": "2026-04-05",
+    "distanceKm": 5.36,
+    "durationSec": 1650,
+    "durationLabel": "27'30''",
+    "geojson": "/data/sports/2026-04-05_running_26.geojson",
+    "source": "20260405户外跑步.gpx"
+  },
+  {
+    "id": "2026-03-31_running_25",
+    "type": "running",
+    "date": "2026-03-31",
+    "distanceKm": 4.63,
+    "durationSec": 1435,
+    "durationLabel": "23'55''",
+    "geojson": "/data/sports/2026-03-31_running_25.geojson",
+    "source": "20260331户外跑步.gpx"
+  },
+  {
+    "id": "2026-03-28_running_24",
+    "type": "running",
+    "date": "2026-03-28",
+    "distanceKm": 5.29,
+    "durationSec": 1643,
+    "durationLabel": "27'23''",
+    "geojson": "/data/sports/2026-03-28_running_24.geojson",
+    "source": "20260328户外跑步.gpx"
+  },
+  {
+    "id": "2026-03-27_walking_23",
+    "type": "walking",
+    "date": "2026-03-27",
+    "distanceKm": 1.58,
+    "durationSec": 1334,
+    "durationLabel": "22'14''",
+    "geojson": "/data/sports/2026-03-27_walking_23.geojson",
+    "source": "20260327户外步行.gpx"
+  },
+  {
+    "id": "2026-03-23_running_22",
+    "type": "running",
+    "date": "2026-03-23",
+    "distanceKm": 5.3,
+    "durationSec": 1671,
+    "durationLabel": "27'51''",
+    "geojson": "/data/sports/2026-03-23_running_22.geojson",
+    "source": "20260323户外跑步.gpx"
+  },
+  {
+    "id": "2026-03-20_running_21",
+    "type": "running",
+    "date": "2026-03-20",
+    "distanceKm": 4.93,
+    "durationSec": 1550,
+    "durationLabel": "25'50''",
+    "geojson": "/data/sports/2026-03-20_running_21.geojson",
+    "source": "20260320户外跑步.gpx"
+  },
+  {
+    "id": "2026-03-10_running_20",
+    "type": "running",
+    "date": "2026-03-10",
+    "distanceKm": 2.41,
+    "durationSec": 728,
+    "durationLabel": "12'08''",
+    "geojson": "/data/sports/2026-03-10_running_20.geojson",
+    "source": "20260310户外跑步.gpx"
+  },
+  {
+    "id": "2026-03-03_running_19",
+    "type": "running",
+    "date": "2026-03-03",
+    "distanceKm": 2.38,
+    "durationSec": 717,
+    "durationLabel": "11'57''",
+    "geojson": "/data/sports/2026-03-03_running_19.geojson",
+    "source": "20260303户外跑步.gpx"
+  },
+  {
+    "id": "2025-11-04_running_18",
+    "type": "running",
+    "date": "2025-11-04",
+    "distanceKm": 1.22,
+    "durationSec": 356,
+    "durationLabel": "5'56''",
+    "geojson": "/data/sports/2025-11-04_running_18.geojson",
+    "source": "20251104户外跑步.gpx"
+  },
+  {
+    "id": "2025-10-13_running_17",
+    "type": "running",
+    "date": "2025-10-13",
+    "distanceKm": 5.04,
+    "durationSec": 1686,
+    "durationLabel": "28'06''",
+    "geojson": "/data/sports/2025-10-13_running_17.geojson",
+    "source": "20251013户外跑步.gpx"
+  },
+  {
+    "id": "2025-10-10_running_16",
+    "type": "running",
+    "date": "2025-10-10",
+    "distanceKm": 4.85,
+    "durationSec": 1686,
+    "durationLabel": "28'06''",
+    "geojson": "/data/sports/2025-10-10_running_16.geojson",
+    "source": "20251010户外跑步.gpx"
+  },
+  {
+    "id": "2025-05-11_running_15",
+    "type": "running",
+    "date": "2025-05-11",
+    "distanceKm": 2.41,
+    "durationSec": 706,
+    "durationLabel": "11'46''",
+    "geojson": "/data/sports/2025-05-11_running_15.geojson",
+    "source": "20250511户外跑步.gpx"
+  },
+  {
+    "id": "2025-05-07_running_14",
+    "type": "running",
+    "date": "2025-05-07",
+    "distanceKm": 2.51,
+    "durationSec": 761,
+    "durationLabel": "12'41''",
+    "geojson": "/data/sports/2025-05-07_running_14.geojson",
+    "source": "20250507户外跑步.gpx"
+  },
+  {
+    "id": "2025-01-15_walking_13",
+    "type": "walking",
+    "date": "2025-01-15",
+    "distanceKm": 1.04,
+    "durationSec": 946,
+    "durationLabel": "15'46''",
+    "geojson": "/data/sports/2025-01-15_walking_13.geojson",
+    "source": "20250115户外步行.gpx"
+  },
+  {
+    "id": "2024-10-05_cycling_12",
+    "type": "cycling",
+    "date": "2024-10-05",
+    "distanceKm": 4.07,
+    "durationSec": 715,
+    "durationLabel": "11'55''",
+    "geojson": "/data/sports/2024-10-05_cycling_12.geojson",
+    "source": "20241005户外骑行.gpx"
+  },
+  {
+    "id": "2024-09-16_walking_11",
+    "type": "walking",
+    "date": "2024-09-16",
+    "distanceKm": 1,
+    "durationSec": 997,
+    "durationLabel": "16'37''",
+    "geojson": "/data/sports/2024-09-16_walking_11.geojson",
+    "source": "20240917户外步行.gpx"
+  },
+  {
+    "id": "2024-09-14_walking_10",
+    "type": "walking",
+    "date": "2024-09-14",
+    "distanceKm": 1.54,
+    "durationSec": 1131,
+    "durationLabel": "18'51''",
+    "geojson": "/data/sports/2024-09-14_walking_10.geojson",
+    "source": "20240914户外步行.gpx"
+  },
+  {
+    "id": "2024-08-31_walking_09",
+    "type": "walking",
+    "date": "2024-08-31",
+    "distanceKm": 10.57,
+    "durationSec": 16268,
+    "durationLabel": "271'08''",
+    "geojson": "/data/sports/2024-08-31_walking_09.geojson",
+    "source": "20240831户外步行.gpx"
+  },
+  {
+    "id": "2024-07-07_cycling_08",
+    "type": "cycling",
+    "date": "2024-07-07",
+    "distanceKm": 2.65,
+    "durationSec": 734,
+    "durationLabel": "12'14''",
+    "geojson": "/data/sports/2024-07-07_cycling_08.geojson",
+    "source": "20240707户外骑行.gpx"
+  },
+  {
+    "id": "2024-06-05_cycling_06",
+    "type": "cycling",
+    "date": "2024-06-05",
+    "distanceKm": 3.38,
+    "durationSec": 678,
+    "durationLabel": "11'18''",
+    "geojson": "/data/sports/2024-06-05_cycling_06.geojson",
+    "source": "20240605户外骑行.gpx"
+  }
+]

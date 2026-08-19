@@ -1,0 +1,208 @@
+.swim-board {
+  position: relative;
+  flex: 1;
+  min-height: 380px;
+  padding: 1.35rem 1.4rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow: hidden;
+  color: var(--ink);
+  background:
+    linear-gradient(160deg, rgba(42, 157, 143, 0.1), transparent 42%),
+    linear-gradient(345deg, rgba(27, 58, 75, 0.06), transparent 50%),
+    #f7fafb;
+}
+
+.swim-board__water {
+  pointer-events: none;
+  position: absolute;
+  inset: auto -10% -35%;
+  height: 55%;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(42, 157, 143, 0.18), transparent 55%),
+    radial-gradient(ellipse at 70% 60%, rgba(27, 58, 75, 0.1), transparent 50%);
+  opacity: 0.9;
+}
+
+.swim-board__top {
+  position: relative;
+  z-index: 1;
+}
+
+.swim-board__eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+.swim-board__venue {
+  margin-top: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.swim-board__hero {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) minmax(0, 1fr);
+  gap: 1.25rem 1.5rem;
+  align-items: stretch;
+}
+
+.swim-board__swolf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.1rem 1rem 1rem;
+  border-radius: 14px;
+  background: linear-gradient(165deg, #1b3a4b 0%, #245867 100%);
+  color: #f4f7f9;
+  box-shadow: 0 14px 36px rgba(27, 58, 75, 0.22);
+}
+
+.swim-board__swolf-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.swim-board__swolf-value {
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(3rem, 6vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.swim-board__swolf-hint {
+  margin-top: 0.45rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.swim-board__swolf-meter {
+  margin-top: 0.85rem;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(244, 247, 249, 0.18);
+  overflow: hidden;
+}
+
+.swim-board__swolf-meter > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7dd3c7, #2a9d8f);
+}
+
+.swim-board__stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.swim-board__stats li {
+  padding: 0.85rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid rgba(27, 58, 75, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.swim-board__stats span {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.swim-board__stats strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.swim-board__lane {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.swim-board__lane-rail {
+  height: 18px;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(27, 58, 75, 0.06) 0 12px,
+      rgba(27, 58, 75, 0.02) 12px 24px
+    ),
+    rgba(27, 58, 75, 0.06);
+  border: 1px solid rgba(27, 58, 75, 0.1);
+  overflow: hidden;
+}
+
+.swim-board__lane-fill {
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(42, 157, 143, 0.55), #1f7a70);
+  max-width: 100%;
+  transition: width 0.6s var(--ease);
+}
+
+.swim-board__lane-glow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(40%, -50%);
+  background: #f4f7f9;
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.35);
+}
+
+.swim-board__lane-markers {
+  margin-top: 0.45rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+}
+
+.swim-board__note {
+  position: relative;
+  z-index: 1;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  max-width: 40rem;
+}
+
+@media (max-width: 720px) {
+  .swim-board__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .swim-board__swolf-value {
+    font-size: 3.2rem;
+  }
+}

@@ -6,6 +6,7 @@ export const NAV_ITEMS = [
   { id: 'publications', label: 'Publications' },
   { id: 'internship', label: 'Internship' },
   { id: 'education', label: 'Education' },
+  { id: 'life', label: 'Life' },
 ] as const
 
 export const SITE = {

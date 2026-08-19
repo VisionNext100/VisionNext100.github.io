@@ -10,13 +10,17 @@
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
+    "leaflet": "^1.9.4",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.21",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
+    "sharp": "^0.35.3",
     "typescript": "~5.9.2",
     "vite": "^7.1.2"
   }

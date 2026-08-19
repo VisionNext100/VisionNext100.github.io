@@ -2,8 +2,8 @@
 
 > **目标域名**：https://visionnext100.github.io  
 > **定位**：英文个人主页，面向海硕申请与求职；后续可扩展中英双语  
-> **当前阶段**：仅方案确认，不写业务代码  
-> **文档版本**：v1.0 · 2026-07-23
+> **当前阶段**：主站已上线；Life 方案已敲定（待实现代码）  
+> **文档版本**：v1.1 · 2026-07-29
 
 ---
 
@@ -11,18 +11,18 @@
 
 ### 1.1 目标
 
-做一个长页单站（Single Page）个人介绍站，让访问者在 1–2 分钟内建立对你的第一印象（身份、方向、项目、经历），并方便招生官 / HR 快速定位联系方式与作品。
+做一个以长页主站为核心的个人介绍站（主页锚点 + Life 子路由），让访问者在 1–2 分钟内建立对你的第一印象（身份、方向、项目、经历），并方便招生官 / HR 快速定位联系方式与作品；Life 通过独立页面承载运动、旅行与摄影，避免主页过长。
 
 ### 1.2 成功标准（验收口径）
 
-| 维度   | 标准                                                                                                |
-| ------ | --------------------------------------------------------------------------------------------------- |
-| 首屏   | 满屏、有进入动画、有可感知交互；品牌名 / 姓名为视觉重心                                             |
-| 导航   | 八个锚点模块 + sticky；滚动时高亮当前 section                                                       |
-| 内容   | About / Skills / Projects / Internship / Education / Life / Contact 齐全；Publications 本期预留占位 |
-| 部署   | 推送到 `visionnext100.github.io` 仓库即可自动上线                                                   |
-| 体验   | 桌面优先，手机可用；加载动画克制（2–3 处主动画 + section 浮入），不堆特效                           |
-| 可维护 | 项目、技能、经历等尽量用配置文件（JSON/TS）维护，少改页面结构                                       |
+| 维度   | 标准                                                                                                                  |
+| ------ | --------------------------------------------------------------------------------------------------------------------- |
+| 首屏   | 满屏、有进入动画、有可感知交互；品牌名 / 姓名为视觉重心                                                               |
+| 导航   | 主页锚点模块 + sticky；Life 进入后子页路由高亮；滚动时高亮当前 section                                                |
+| 内容   | About / Skills / Projects / Internship / Education / Life / Contact 齐全；Publications 占位；Life 三联入口 + 三个子页 |
+| 部署   | 推送到 `visionnext100.github.io` 仓库即可自动上线                                                                     |
+| 体验   | 桌面优先，手机可用；加载动画克制（2–3 处主动画 + section 浮入），不堆特效                                             |
+| 可维护 | 项目、技能、经历等尽量用配置文件（JSON/TS）维护，少改页面结构                                                         |
 
 ---
 
@@ -42,15 +42,16 @@
 
 ### 3.1 结论（推荐）
 
-| 项       | 选择                                            | 理由                                                 |
-| -------- | ----------------------------------------------- | ---------------------------------------------------- |
-| 形态     | **静态站点**（GitHub Pages）                    | 与目标域名天然匹配，零服务器成本                     |
-| 脚手架   | **Vite + React + TypeScript**                   | 组件化便于分 section；生态成熟；动画/地图/表单都好接 |
-| 样式     | **CSS Modules 或普通 CSS + CSS 变量**           | 避免过度依赖重型 UI 库；便于自定义视觉               |
-| 动画     | **Framer Motion**（主）+ 少量 CSS               | 进入浮入、导航过渡、卡片 hover 够用                  |
-| 路由     | **无多页路由**，单页 + `id` 锚点滚动            | 符合「长页 + sticky nav」需求                        |
-| 部署     | `gh-pages` 分支或 GitHub Actions 构建 `dist/`   | 推送即更新                                           |
-| 内容配置 | `src/data/*.ts`（projects、skills、education…） | 后续加项目/学校只改数据                              |
+| 项       | 选择                                         | 理由                                                 |
+| -------- | -------------------------------------------- | ---------------------------------------------------- |
+| 形态     | **静态站点**（GitHub Pages）                 | 与目标域名天然匹配，零服务器成本                     |
+| 脚手架   | **Vite + React + TypeScript**                | 组件化便于分 section；生态成熟；动画/地图/表单都好接 |
+| 样式     | **CSS Modules 或普通 CSS + CSS 变量**        | 避免过度依赖重型 UI 库；便于自定义视觉               |
+| 动画     | **Framer Motion**（主）+ 少量 CSS            | 进入浮入、导航过渡、卡片 hover 够用                  |
+| 路由     | **主页锚点** + **`react-router-dom` 子页**   | 长页保留；Life 三子站独立 URL，避免主页过长          |
+| 地图     | **Leaflet** + OSM / Carto 浅色瓦片           | 免费；城市级 lat/lng；轨迹与足迹共用                 |
+| 部署     | GitHub Actions 构建 `dist/`；复制 `404.html` | SPA 子路径刷新不 404                                 |
+| 内容配置 | `src/data/*.ts`（projects、skills、life…）   | 后续加项目/足迹/运动只改数据                         |
 
 **备选（不推荐作为首选）**
 
@@ -58,57 +59,51 @@
 - Next.js：对 GH Pages 需 `output: 'export'`，对你当前需求偏重  
 - Astro：内容站很强，但强交互 Hero / Life 仍要大量 client JS，收益一般  
 
-### 3.2 仓库与目录建议
+### 3.2 仓库与目录建议（含 Life）
 
-仓库名需为 **`visionnext100.github.io`**（用户级 Pages）。
+仓库名需为 **`visionnext100.github.io`**（用户级 Pages）。本地开发目录 `Homepage/`。
 
 ```text
-Homepage/   （本地开发目录，最终推到上述仓库）
-├── PLAN.md                 ← 本文档
-├── README.md               ← 后续补充（如何本地跑、如何部署）
-├── package.json
-├── vite.config.ts
-├── index.html
+Homepage/
+├── docs/PLAN.md
+├── raw/                         ← gitignore：原 GPX、摄影原图（永不公开）
+│   ├── sports/*.gpx
+│   └── photography/*
+├── scripts/
+│   ├── process-gpx.mjs          ← GPX → GeoJSON + 摘要
+│   └── watermark-photos.mjs     ← sharp 打水印 → public/
 ├── public/
-│   ├── favicon.ico
-│   ├── images/             ← 头像、项目图、学校图、旅行图、摄影原图等
-│   └── data/               ← 可选：运动轨迹 GeoJSON 等
+│   ├── images/
+│   │   ├── life/                ← 三联入口代表图
+│   │   ├── travel/              ← 足迹弹层照片
+│   │   └── photography/         ← 已加水印成品
+│   └── data/sports/*.geojson    ← 脱敏轨迹
 └── src/
-    ├── main.tsx
-    ├── App.tsx
-    ├── styles/
-    │   ├── tokens.css      ← 颜色、字体、间距变量
-    │   └── global.css
-    ├── components/
-    │   ├── Navbar.tsx
-    │   ├── sections/
-    │   │   ├── Home.tsx
-    │   │   ├── About.tsx
-    │   │   ├── Skills.tsx
-    │   │   ├── Projects.tsx
-    │   │   ├── Publications.tsx  ← 占位
-    │   │   ├── Internship.tsx
-    │   │   ├── Education.tsx
-    │   │   ├── Life.tsx
-    │   │   └── Contact.tsx
-    │   └── ui/             ← TypedText、TapePhoto、SectionReveal 等
-    ├── data/
-    │   ├── skills.ts
-    │   ├── projects.ts
-    │   ├── education.ts
-    │   ├── internship.ts
-    │   └── life.ts
-    └── hooks/
-        └── useActiveSection.ts
+    ├── pages/                   ← 路由页
+    │   ├── HomePage.tsx         ← 现有长页
+    │   ├── life/
+    │   │   ├── SportsPage.tsx
+    │   │   ├── TravellingPage.tsx
+    │   │   └── PhotographyPage.tsx
+    ├── components/sections/Life.tsx   ← 主页 #life 三联入口
+    └── data/
+        ├── sports.ts
+        ├── travel.ts
+        └── photography.ts
 ```
 
-### 3.3 部署流程（后续实现时）
+### 3.3 路由与部署
 
-1. 本地 `npm run build` → 产出 `dist/`  
-2. GitHub Actions：push 到 `main` 后自动发布到 Pages  
-3. 或使用 `vite-plugin-gh-pages` / 手动推送 `dist` 到 `gh-pages` 分支  
+| URL                 | 内容                          |
+| ------------------- | ----------------------------- |
+| `/`                 | 长页主站；含 `#life` 三联入口 |
+| `/life/sports`      | 运动记录 + 轨迹图             |
+| `/life/travelling`  | 世界足迹地图                  |
+| `/life/photography` | 摄影作品集                    |
 
-域名确认：用户级站点根路径即为 `https://visionnext100.github.io/`（无需 `/repo` 前缀）。
+1. 本地 `npm run build` → `dist/`  
+2. GitHub Actions 发布 Pages；构建后将 `index.html` 复制为 `404.html`（SPA 回退）  
+3. 域名：`https://visionnext100.github.io/`（用户级根路径）
 
 ---
 
@@ -118,26 +113,37 @@ Homepage/   （本地开发目录，最终推到上述仓库）
 
 横向 sticky 导航，模块顺序：
 
-`Home · About · Skills · Projects · Publications · Internship · Education · Life`
+`Home · About · Skills · Projects · Publications · Internship · Education · Life` → CTA **Get in Touch**
 
-- **不进入导航**：`Get in Touch`（页尾独立 section，导航可用文字链或 Footer 入口）  
-- 行为：点击平滑滚动到对应 `id`；滚动时根据视口高亮当前项  
-- 移动端：折叠为汉堡菜单或底部精简链接（实现期再定一种）
+- **Life** 位于 Education 与 Get in Touch 之间  
+- 主页：点击 Life → 滚动到 `#life`；其余锚点平滑滚动并高亮  
+- 子页（`/life/*`）：顶栏仍显示全站导航；**Life 高亮**；点 Home/About/… 回到 `/#…`；子页内可提供「Back to Life」链回 `/#life`  
+- Get in Touch 仍为 CTA（主页 `#contact`），不进 `NAV_ITEMS` 列表项逻辑可保持现状  
+- 移动端：汉堡菜单（已实现）
 
-### 4.2 Section 顺序（自上而下）
+### 4.2 主页 Section 顺序（自上而下）
 
 1. **Home**（100vh）  
 2. **About**  
 3. **Skills**  
 4. **Projects**  
-5. **Publications**（本期占位 / 可隐藏）  
+5. **Publications**（占位）  
 6. **Internship**  
 7. **Education**  
-8. **Life**（Travel / Sports / Photography 子区块）  
+8. **Life**（仅三联导航入口，不内嵌三大子模块全文）  
 9. **Get in Touch**  
-10. **Footer**（版权、GitHub / LinkedIn 等）
+10. **Footer**
 
-每个 section：**一个主标题 + 一句短说明 + 主体内容**；载入时统一用「进入视口浮入」（`whileInView`），避免整页静态。
+每个 section：**一个主标题 + 一句短说明 + 主体内容**；载入时统一用「进入视口浮入」。
+
+### 4.3 Life 信息流
+
+```text
+Navbar[Life] → /#life（三联入口）
+                 ├→ /life/sports
+                 ├→ /life/travelling
+                 └→ /life/photography
+```
 
 ---
 
@@ -298,38 +304,106 @@ Homepage/   （本地开发目录，最终推到上述仓库）
 
 ---
 
-### 5.8 Life（三个子模块）
+### 5.8 Life（主页入口 + 三个子页）
 
-复杂度最高，建议**分阶段交付**（见第 7 节）。
+复杂度最高；主页只做导航，详情拆到独立路由，避免长页膨胀。
 
-#### 5.8.1 Travel — 世界地图足迹
+#### 5.8.0 主页 Life Hub — 杂志三联入口（已敲定）
 
-| 项           | 方案                                                                            |
-| ------------ | ------------------------------------------------------------------------------- |
-| 地图库       | **Leaflet** + OpenStreetMap 瓦片（免费）；或轻量 SVG 世界地图（无瓦片、更可控） |
-| 标记         | 去过的城市用强调色圆点；未去过保持底图色                                        |
-| Hover / 点击 | Tooltip / Popup：地点名、时间、一张照片                                         |
-| 数据         | `life.ts` / JSON：`{ city, country, lat, lng, date, photo, note }`              |
+气质：活泼、有创意，但不花哨。呼应现有胶带照片：轻微拍立得倾斜，**不用**护照戳/票根堆砌，也**不用**纯色图标墙。
 
-**推荐**：先用 **SVG 简化世界地图 + 标注点**（加载快、风格统一）；若你需要可缩放街景级精度，再换 Leaflet。
+```text
+Life
+Three windows into how I spend time outside the IDE.
 
-#### 5.8.2 Sports — 华为运动健康
+┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+│  SPORTS     │  │ TRAVELLING  │  │ PHOTOGRAPHY │
+│  (代表图)    │  │  (代表图)    │  │  (代表图)    │
+│  Walk·Run·  │  │  Footprints │  │  Through    │
+│  Swim →     │  │  on a map → │  │  my lens →  │
+└─────────────┘  └─────────────┘  └─────────────┘
+```
 
-| 项       | 方案                                                                |
-| -------- | ------------------------------------------------------------------- |
-| 数据获取 | 你从华为运动健康 **导出** GPX / CSV（或截取关键摘要）               |
-| 展示     | 列表：日期、运动类型、距离、时长；可选一条轨迹地图（Leaflet + GPX） |
-| 隐私     | **不要**上传精确住址轨迹；轨迹可做简化或只展示公园/校园片段         |
+| 项   | 方案                                                                 |
+| ---- | -------------------------------------------------------------------- |
+| 布局 | 桌面三列等高大图；移动端纵向三张全宽条                               |
+| 文案 | 标题叠在图下半区 + 底部渐变遮罩保可读；每块一句短说明 + 箭头         |
+| 动效 | 初始微旋转约 ±1.5°；hover 回正并上浮 4–6px；浮入 stagger 0.05s       |
+| 跳转 | 整块可点 → `/life/sports` · `/life/travelling` · `/life/photography` |
+| 素材 | 各 1 张代表图 → `public/images/life/`                                |
 
-本期可先做「精选 3–5 次运动记录」静态展示，再扩展批量导入。
+#### 5.8.1 Sports — `/life/sports`
 
-#### 5.8.3 Photography — 作品集 + 水印
+**已有样例（仓库根目录，实现时迁入 `raw/sports/`）**
 
-- 瀑布流或整齐网格均可；默认 **不规则瀑布流偏活泼**，申请向可改为规则网格——实现前再定  
-- **水印**：构建时或运行时叠加  
-  - 推荐：**构建时用脚本打水印**（或导出时已打好），站点直接用成品图，避免前端可轻易去水印  
-  - 水印文案建议：`© Michael Wong` / `@VisionNext100`  
-- Lightbox：点击放大查看  
+| 文件                   | 类型     | 约点数 | 约时长  | 备注     |
+| ---------------------- | -------- | ------ | ------- | -------- |
+| `20260531户外步行.gpx` | 户外步行 | ~1973  | ~43 min | 上海附近 |
+| `20260605户外跑步.gpx` | 户外跑步 | ~1559  | ~45 min | 上海附近 |
+
+游泳通常无可靠户外 GPS → **手工摘要卡片**（日期、距离、时长、泳池/公开水域），**不画轨迹**。
+
+**数据处理流水线（构建期）**
+
+1. 脚本读 GPX → 计算 `date`、`type`（walk/run）、`durationSec`、`distanceKm`（Haversine）  
+2. 轨迹降采样至约 200–400 点；**裁切起终点**（去掉前后若干分钟或固定距离）降低住址暴露  
+3. 输出：`public/data/sports/*.geojson`（仅折线）+ `src/data/sports.ts`（列表摘要；游泳手写）  
+4. 原 GPX 仅存 `raw/sports/` 且 **gitignore**；公开仓库只提交脱敏 GeoJSON  
+
+**页面展示**
+
+- 顶部分类：`All | Walking | Running | Swimming`  
+- 每条只展示：**日期、类型、距离、时长**  
+- **不展示**：心率、配速、卡路里、步频  
+- Walking / Running：左摘要 + 右 Leaflet 折线（浅色底图、单色轨迹）  
+- Swimming：仅摘要卡（可选非敏感氛围图）  
+- 精选制：现有 2 条 + 后续补充；不做「导入全部历史」
+
+#### 5.8.2 Travelling — `/life/travelling`
+
+**城市级足迹（已敲定）**：数据为每个城市写死坐标，地图上画**城市圆点**，而不是给整个国家填色。
+
+- 例：美国只去过 LA、SF → 仅两个点，其余空白  
+- 颜色按 **大洲/地区色板** 区分（如东亚青绿、北美橙、欧洲蓝），一眼看出分布，又不会把「去过洛杉矶」画成「染红整个美国」  
+- **不采用**国家 choropleth 作主交互（粒度太粗）；可选极淡国家描边仅作地理参照  
+
+**交互**
+
+- Leaflet 可缩放/拖拽；初始 `fitBounds` 到全部足迹  
+- 桌面 Hover / 移动端点击：Popup 显示 **城市名、到访日期、1–3 张照片**；点缩略图进简易 lightbox  
+- 侧栏或底部城市列表，点击 `flyTo` 对应标记  
+
+**数据形状（`src/data/travel.ts`）**
+
+```ts
+{
+  city: 'Los Angeles',
+  country: 'USA',
+  region: 'northAmerica', // 用于色板
+  lat: 34.05,
+  lng: -118.24,
+  visits: [{ date: '2025-08', photos: ['/images/travel/la-1.jpg'] }],
+}
+```
+
+#### 5.8.3 Photography — `/life/photography`
+
+**水印（现实预期）**
+
+没有绝对防去水印的方法；目标是提高转载成本并声明版权，而非军事级防盗。
+
+1. 原图只放本机 `raw/photography/`（`.gitignore`），**永不进 Git**  
+2. 脚本 `scripts/watermark-photos.mjs`（`sharp`）：长边压到约 1800px；半透明斜向平铺 `© Yehan Wang · VisionNext100`；角落再放一小条可读版权  
+3. 输出到 `public/images/photography/` 后提交开源仓库  
+4. 二期可选：EXIF 版权字段；不做隐写术  
+
+**展示：「故事条 + 错落网格」（避免堆砌）**
+
+- 页顶 1 张全宽 Featured（大图 + 一行标题/地点）  
+- 其下按主题分组（如 Campus / Street / Travel），每组一句短导语  
+- 组内 2–3 列不规则高度网格，比例略有变化，留白呼吸  
+- 点击 Lightbox 看大图（仍带水印）  
+- 首批精选约 12–24 张；不做无限瀑布自动加载  
 
 ---
 
@@ -362,40 +436,36 @@ Homepage/   （本地开发目录，最终推到上述仓库）
 
 ## 7. 分阶段交付计划
 
-### Phase 0 — 方案确认（当前）
+### Phase 0 — 方案确认
 
 - [x] 产出 `PLAN.md`  
-- [ ] 你确认：Hero 交互方案（A/B/C/D/E）、Skills 布局（推荐 B）、Publications 是否显示导航、联系表单是否接 Formspree、电话是否公开  
+- [x] Hero / Skills / Publications / Contact / Phone 等决策（见 §9）  
+- [x] Life 多页方案敲定（2026-07-29，见 §5.8 / §9）  
 
-### Phase 1 — 脚手架与骨架
+### Phase 1 — 脚手架与骨架 — 已完成
 
-- Vite + React + TS + 基础布局 + sticky Navbar + 空 section 锚点  
-- 全局 tokens、字体、响应式栅格  
-- GitHub Pages 部署打通（可先空白页上线）  
+- Vite + React + TS + sticky Navbar + section 锚点  
+- 全局 tokens、字体、响应式  
+- GitHub Pages 部署打通  
 
-### Phase 2 — Home + About + Skills + Education
+### Phase 2 — Home + About + Skills + Education — 已完成
 
-- 打字机、胶带照片、首屏进入动画、背景交互（按确认方案）  
-- About 文案与联系方式  
-- Skills 分组展示  
-- Education 时间线（ECNU 单节点）  
+### Phase 3 — Projects + Internship + Contact — 已完成
 
-### Phase 3 — Projects + Internship + Contact
+（含 Upcoming / AdenoGuard、Formspree、Footer 等后续微调）
 
-- 项目卡片数据化 + 跳转仓库  
-- 实习经历块  
-- Contact 表单（Formspree）+ Footer  
+### Phase 4 — Life（下一实现重点）
 
-### Phase 4 — Life（可再拆）
-
-- 4a Travel 地图 + 若干足迹数据  
-- 4b Photography 画廊 + 水印图  
-- 4c Sports 精选记录（有导出数据后再做）  
+- **4.0 路由骨架**：接入 `react-router-dom`；主页 `#life` 占位 + Navbar Life；部署复制 `404.html`  
+- **4.1 Life Hub**：杂志三联入口（代表图 + 文案 + 跳转子页）  
+- **4.2 Sports**：GPX 处理脚本 + 脱敏 GeoJSON + 列表/分类 + Leaflet 轨迹；游泳摘要卡  
+- **4.3 Travelling**：`travel.ts` 城市数据 + Leaflet 足迹 + Popup（日期/照片）+ 列表 flyTo  
+- **4.4 Photography**：水印脚本 + Featured + 主题分组错落网格 + Lightbox  
+- **4.5 打磨**：图片懒加载/压缩、移动端、`prefers-reduced-motion`、隐私复核  
 
 ### Phase 5 — 打磨与双语预留
 
-- 性能（图片压缩、懒加载）、SEO（title/description/OG）  
-- 无障碍（对比度、focus、减少动效 `prefers-reduced-motion`）  
+- SEO（title/description/OG）、无障碍  
 - 预留 i18n 结构（本期不做切换 UI）  
 - Publications 真实数据接入（有论文时）  
 
@@ -405,61 +475,77 @@ Homepage/   （本地开发目录，最终推到上述仓库）
 
 ### 文案 / 信息
 
-- [ ] 英文姓名确认：Michael Wong（是否还需中文名展示？本期英文站可页脚小字）  
-- [ ] About 英文 1–2 段  
-- [ ] 公开 Email；Phone 是否展示  
-- [ ] 学位英文全称（ECNU CS）  
-- [ ] 项目列表：名称、简介、仓库 URL、技术栈、封面图  
-- [ ] 实习职责英文 3–5 句（可选）  
-- [ ] 旅行足迹：城市、时间、照片  
-- [ ] 摄影作品集 + 水印偏好文案  
-- [ ] 运动导出样例（可选，Phase 4）  
+- [x] 英文姓名：Yehan WANG  
+- [x] About 英文、公开 Email（无 Phone）  
+- [x] 学位：B.Eng. in Computer Science, ECNU  
+- [x] 项目列表与 Upcoming（AdenoGuard 等）  
+- [x] 实习（SVW）  
+- [ ] **旅行足迹清单**：城市、国家、大致日期、照片（Phase 4.3）  
+- [ ] **游泳摘要**（若无 GPX）：日期、距离、时长、泳池/公开水域（Phase 4.2）  
+- [ ] **更多步行/跑步 GPX**（可选，精选即可）  
+- [ ] 水印文案确认：默认 `© Yehan Wang · VisionNext100`  
 
 ### 图片
 
-- [ ] 首屏生活照（胶带效果用）  
-- [ ] Contact 左侧配图  
-- [ ] ECNU 实景或合适校景图  
-- [ ] 项目封面图若干  
-- [ ] Favicon / 社交分享图（可选）  
+- [x] 首屏生活照、Contact 配图、ECNU、项目封面、Favicon 等  
+- [ ] **Life 三联入口代表图** ×3（Sports / Travelling / Photography）→ `public/images/life/`  
+- [ ] **旅行城市照片**（每城 1–3 张）→ 处理后放 `public/images/travel/`  
+- [ ] **摄影原图**（12–24 张精选）→ 仅本机 `raw/photography/`，经水印脚本输出  
+
+### 运动数据（已有样例）
+
+- [x] `20260531户外步行.gpx`、`20260605户外跑步.gpx`（实现时迁入 `raw/sports/` 并 gitignore）  
 
 ### 账号
 
-- [ ] Formspree / Web3Forms 账号（若启用真实收信）  
-- [ ] 确认 GitHub 仓库使用 `visionnext100.github.io`  
+- [x] Formspree（`VITE_FORMSPREE_ID`）  
+- [x] 仓库 `visionnext100.github.io`  
 
 ---
 
-## 9. 已确认决策（2026-07-28）
+## 9. 已确认决策
+
+### 9.1 主站（2026-07-28）
 
 1. **Hero 背景交互**：A 粒子  
 2. **Skills 布局**：B 分组芯片墙  
-3. **Projects**：一行两个；卡片改为**上图下文**（封面更大）  
+3. **Projects**：一行两个；上图下文；含 Upcoming / AdenoGuard  
 4. **Publications**：导航保留占位  
-5. **Internship 视觉**：文字品牌（SVW）  
-6. **Contact**：Formspree → `3276924450@qq.com`（需配置 `VITE_FORMSPREE_ID`）  
+5. **Internship 视觉**：文字品牌 + SVW Logo  
+6. **Contact**：Formspree → `3276924450@qq.com`  
 7. **Phone**：不公开；邮箱 `yehanw133@gmail.com`  
-8. **Life**：本期不做（导航暂不展示）  
+
+### 9.2 Life（2026-07-29）— 撤销「本期不做」
+
+1. **导航**：Education 与 Get in Touch 之间加入 Life；主页 `#life`  
+2. **形态**：主页仅三联入口；详情为 `/life/sports` · `/life/travelling` · `/life/photography`  
+3. **路由**：`react-router-dom` + GH Pages `404.html` SPA 回退  
+4. **Hub 视觉**：杂志三联 + 微倾斜胶带/拍立得气质  
+5. **Sports**：GPX 构建期脱敏；只展示距离与时长；游泳无轨迹用摘要卡；Leaflet 画折线  
+6. **Travelling**：城市级圆点（非国家填色）；地区色板；Hover/点击显示城市、日期、照片  
+7. **Photography**：`sharp` 构建期水印；故事条 + 错落网格 + Lightbox；原图不进 Git  
+8. **地图库**：统一 Leaflet + 浅色瓦片  
 
 ---
 
 ## 10. 风险与约束
 
-| 风险                     | 应对                                      |
-| ------------------------ | ----------------------------------------- |
-| GitHub Pages 仅静态      | 表单用第三方；不做自建后端                |
-| 商标 / Logo              | 公司与学校优先文字或实景图                |
-| 隐私（电话、轨迹、人脸） | 你确认公开范围；轨迹脱敏                  |
-| 性能（地图、大图、粒子） | 懒加载、图片压缩、移动端降级动效          |
-| 内容未齐                 | 用清晰 placeholder，不阻塞骨架开发        |
-| 小怪物创意撞车           | 用粒子/胶带照拉开差异；或极简角色弱化处理 |
+| 风险                     | 应对                                           |
+| ------------------------ | ---------------------------------------------- |
+| GitHub Pages 仅静态      | 表单用第三方；不做自建后端                     |
+| SPA 子路径刷新 404       | 部署复制 `404.html`                            |
+| 商标 / Logo              | 公司与学校优先文字或实景图                     |
+| 隐私（电话、轨迹、人脸） | 轨迹裁切脱敏；原 GPX/原图不入库                |
+| 水印可被去除             | 提高转载成本即可；斜向平铺 + 角标；原图不公开  |
+| 性能（地图、大图、粒子） | 懒加载、图片压缩、移动端降级动效               |
+| OSM 瓦片用量             | 个人站流量通常可接受；必要时换 Carto/自选 tile |
 
 ---
 
 ## 11. 下一步
 
-请你阅读本文并回复 **第 9 节** 的选项（以及已有的文案/照片可稍后给）。  
+1. **你提供** §8 中 Life 相关素材（三联图、旅行清单、游泳摘要、摄影原图）。  
+2. **进入 Phase 4.0**：接入路由 + Navbar Life + 主页 Life 骨架（可先无真实图）。  
+3. 按 4.1 → 4.2 → 4.3 → 4.4 → 4.5 实现。  
 
-确认后进入 **Phase 1**：在当前文件夹初始化 Vite 项目并搭好整页骨架与导航。  
-
-本期交付物仅为本文件：`PLAN.md`。
+本期文档交付：`docs/PLAN.md` v1.1（Life 方案写入完成）。

@@ -13,6 +13,11 @@ dist-ssr
 *.local
 .env
 
+# Local-only assets & tooling (do not publish originals / watermark scripts)
+raw/
+temp/
+scripts/
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,110 @@
+.life-hub {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: stretch;
+  height: clamp(220px, 28vw, 320px);
+}
+
+.life-hub__item {
+  flex: 1 1 0;
+  min-width: 0;
+  transition: flex-grow 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* When one card is hovered: expand it, shrink the others. */
+.life-hub:has(.life-hub__item:hover) .life-hub__item:not(:hover) {
+  flex-grow: 0.72;
+}
+
+.life-hub__item:hover {
+  flex-grow: 1.56;
+}
+
+.life-hub__card {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.life-hub__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.life-hub__overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 2.4rem 1.15rem 1.2rem;
+  background: linear-gradient(
+    to top,
+    rgba(27, 58, 75, 0.82) 0%,
+    rgba(27, 58, 75, 0.35) 55%,
+    transparent 100%
+  );
+  color: #f7fafb;
+}
+
+.life-hub__overlay h3 {
+  font-style: italic;
+  font-size: 1.55rem;
+  font-weight: 700;
+}
+
+.life-hub__overlay p {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  color: rgba(247, 250, 251, 0.82);
+}
+
+.life-hub__arrow {
+  display: inline-block;
+  margin-top: 0.65rem;
+  font-size: 1.15rem;
+  opacity: 0.85;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.life-hub__item:hover .life-hub__card {
+  box-shadow: 0 18px 48px rgba(27, 58, 75, 0.16);
+}
+
+.life-hub__item:hover .life-hub__card img {
+  transform: scale(1.06);
+}
+
+.life-hub__item:hover .life-hub__arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .life-hub {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .life-hub__item,
+  .life-hub:has(.life-hub__item:hover) .life-hub__item:not(:hover),
+  .life-hub__item:hover {
+    flex: none;
+  }
+
+  .life-hub__card {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-hub__item {
+    transition: none;
+  }
+}

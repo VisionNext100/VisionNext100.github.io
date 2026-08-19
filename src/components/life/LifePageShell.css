@@ -1,0 +1,34 @@
+.life-page {
+  min-height: calc(100vh - var(--nav-h));
+  padding: 2.5rem 1.5rem 4.5rem;
+}
+
+.life-page__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.life-page__back {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  transition: color 0.2s ease;
+}
+
+.life-page__back:hover {
+  color: var(--accent-deep);
+}
+
+.life-page__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  margin-bottom: 0.75rem;
+}
+
+.life-page__lead {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}

@@ -91,7 +91,7 @@ p {
 }
 
 .section {
-  padding: 5.5rem 1.5rem;
+  padding: 3.75rem 1.5rem;
   scroll-margin-top: calc(var(--nav-h) + 0.5rem);
 }
 
@@ -113,7 +113,7 @@ p {
 .section__lead {
   max-width: 40rem;
   color: var(--ink-soft);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .section--alt {
