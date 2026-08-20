@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/newbanner.jpg" width="800" alt="VisionNext100 Personal Homepage">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/newbanner.jpg" width="800" alt="VisionNext100 Personal Homepage">
     <br>
 </div>
 
@@ -28,7 +28,7 @@ No license is granted to use, copy, modify, distribute, or create derivative wor
 This site is a Vite + React + TypeScript SPA: a long-scroll home page (`/`) with section anchors, plus Life sub-routes under `/life/*` for sports, travel, and photography. Content lives mainly in `src/data/`; media and GeoJSON ship from `public/`. The browser app talks to Formspree for contact and Leaflet for maps, and is built by GitHub Actions then hosted on GitHub Pages. Hand-written CSS only—no UI kit.
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/architecture-detailed.jpg" width="800" alt="Detailed system architecture">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed.jpg" width="800" alt="Detailed system architecture">
     <br>
     <em>End-to-end view: SPA routes and Life pages, content/assets, local tooling, and the GitHub Actions → Pages deploy path.</em>
 </div>
@@ -40,7 +40,7 @@ The three diagrams below zoom in on parts of the overview: the technology layers
 ### I. Stack layers
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/architecture.jpg" width="800" alt="Stack layers">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture.jpg" width="800" alt="Stack layers">
     <br>
     <em>Four layers from visitor to host: Browser, Libraries, Content, and GitHub Pages.</em>
 </div>
@@ -58,12 +58,12 @@ The three diagrams below zoom in on parts of the overview: the technology layers
 ### II. Deploy pipeline
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/deploy.jpg" width="800" alt="Deploy pipeline">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/deploy.jpg" width="800" alt="Deploy pipeline">
     <br>
     <em>Push to main triggers Actions: install, build, SPA 404 fallback, then publish to GitHub Pages.</em>
 </div>
 
-Secret required: `VITE_FORMSPREE_ID` (Actions → Secrets).
+Secret required: `VITE_FORMSPREE_ID`.
 
 ### III. Content pipeline
 
@@ -72,10 +72,10 @@ Day-to-day edits (About, projects, skills, internship, education, contact) live 
 Life media has an extra local pipeline: originals stay on the machine; only processed outputs are committed.
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/newpipeline.jpg" width="550" alt="Content pipeline">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/newpipeline.jpg" width="400" alt="Content pipeline">
     <br>
     <em>Local-only raw/ and scripts/ feed committed public/ and src/data/ outputs.</em>
-</div>
+</div>  
 
 | Kind            | Steps                                                                                                                                          |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
