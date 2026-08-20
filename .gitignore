@@ -17,7 +17,7 @@ dist-ssr
 raw/
 temp/
 scripts/
-docs/PLAN.md
+docs/
 
 # Editor
 .vscode/*

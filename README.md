@@ -1,8 +1,19 @@
+<div align="center">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/banner.jpg" width="800" alt="VisionNext100 Personal Homepage">
+    <br>
+</div>
+
 # Yehan Wang — Personal Homepage
+
+<div align="center">
 
 **English** | [中文](./README.zh-CN.md)
 
-## Copyright
+</div>
+
+Live site: https://visionnext100.github.io
+
+## I. Copyright
 
 © 2026 Yehan Wang (王业涵). All rights reserved.
 
@@ -11,15 +22,54 @@ No license is granted to use, copy, modify, distribute, or create derivative wor
 from the source code, text, images, photos, videos, or data in this project
 without prior written permission from the copyright holder.
 
-## Stack
+## II. Architecture
 
-- Vite + React + TypeScript
-- Framer Motion
-- Leaflet (travel map & sports tracks)
-- Formspree (contact form)
-- GitHub Actions → GitHub Pages
+A Vite SPA: long-scroll home page plus three Life sub-routes. Content is mostly data files; pages stay thin.
 
-## One-time GitHub setup
+<div align="center">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/architecture.jpg" width="800" alt="Project architecture">
+    <br>
+</div>
+
+| Layer | Role |
+|-------|------|
+| **Vite + React + TypeScript** | App shell, components, typed content |
+| **React Router** | `/` (hash sections) and `/life/sports|travelling|photography` |
+| **Framer Motion** | Hero / section motion |
+| **Leaflet** | Travel map & sports GPS tracks |
+| **Formspree** | Contact form backend (id via `VITE_FORMSPREE_ID`) |
+| **`src/data/`** | Editable copy, projects, sports, travel, photography |
+| **`public/`** | Watermarked media, GeoJSON, CV — served as static files |
+
+Hand-written CSS (no UI kit). Maps and Life pages load assets from `/images/...` and `/data/...`.
+
+## III. Workflows
+
+### I. Deploy (push → live)
+
+<div align="center">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/deploy.jpg" width="800" alt="Deploy workflow">
+    <br>
+</div>
+
+Secret required: `VITE_FORMSPREE_ID` (Actions → Secrets).
+
+### II. Local content pipeline (Life)
+
+Originals stay on the machine; only processed outputs are committed.
+
+<div align="center">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/pipeline.jpg" width="800" alt="Life content pipeline">
+    <br>
+</div>
+
+| Kind | Steps |
+|------|--------|
+| **Sports (GPX)** | `raw/sports/` → `node scripts/process-gpx.mjs` → commit `public/data/sports/` + `sports.generated.json`. Pool swims: edit `sports.ts` by hand. |
+| **Travelling** | `raw/travelling/` → watermark script → register in `travel.ts` (+ GeoJSON under `public/data/travel/` if needed). |
+| **Photography** | `raw/photography/` → watermark → `build-photo-meta.mjs` → add `frame(...)` in `photography.ts`. |
+
+## IV. One-time GitHub setup
 
 1. Repo → **Settings → Pages**
 2. **Build and deployment → Source**: choose **GitHub Actions**
@@ -30,7 +80,7 @@ without prior written permission from the copyright holder.
 
 Then push to `main` (or run the workflow manually). The site should appear at https://visionnext100.github.io within 1–2 minutes.
 
-## Local setup
+## V. Local setup
 
 ```bash
 npm install
@@ -56,7 +106,7 @@ npm run build
 npm run preview
 ```
 
-## Site structure
+## VI. Site structure
 
 | Area | What it is |
 |------|------------|
@@ -65,33 +115,7 @@ npm run preview
 | `/life/travelling` | Interactive map of places visited |
 | `/life/photography` | Coverflow photo gallery |
 
-Most copy and lists live under `src/data/` so you can edit content without rewriting page layout.
-
-## Adding Life content later
-
-`raw/` (originals) and `scripts/` (GPX / watermark tools) are **gitignored** and must not be pushed.
-
-### Sports (GPX)
-
-1. Drop new `.gpx` files into `raw/sports/`
-2. Run `node scripts/process-gpx.mjs`
-3. Commit generated files under `public/data/sports/` and `src/data/sports.generated.json`
-4. Pool swims without GPS are edited by hand in `src/data/sports.ts`
-
-### Travelling
-
-1. Put originals in `raw/travelling/`
-2. Run `node scripts/watermark-photos.mjs`
-3. Register the place / photo in `src/data/travel.ts` (and province GeoJSON under `public/data/travel/` if needed)
-
-### Photography
-
-1. Put originals in `raw/photography/`
-2. Run `node scripts/watermark-photos.mjs`
-3. Run `node scripts/build-photo-meta.mjs`
-4. Append one `frame(...)` line in `src/data/photography.ts`
-
-## Content layout
+## VII. Content layout
 
 | Path | Purpose |
 |------|---------|
@@ -100,10 +124,11 @@ Most copy and lists live under `src/data/` so you can edit content without rewri
 | `public/images/life/` | Life hub cover images |
 | `public/images/travel/` | Travel photos (watermarked) |
 | `public/images/photography/` | Photography (watermarked) |
+| `public/images/readme/` | README diagrams |
 | `public/data/sports/` | Desensitized track GeoJSON |
 | `public/data/travel/` | Region boundary GeoJSON |
 | `public/images/contact/` | Contact illustration |
 | `public/images/brands/` | Internship / school logos |
 | `public/cv/` | Resume PDF |
 | `src/data/` | Editable content |
-| `docs/PLAN.md` | Plan document (Chinese) |
+| `raw/` · `scripts/` | Local originals & tooling (gitignored) |
