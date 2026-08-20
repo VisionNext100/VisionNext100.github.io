@@ -14,12 +14,14 @@ https://visionnext100.github.io
 
 ## I. Copyright
 
-© 2026 Yehan Wang (王业涵). All rights reserved.
+**© 2026 Yehan Wang (王业涵). All rights reserved.**
 
-This repository is published for personal portfolio and deployment purposes only.
-No license is granted to use, copy, modify, distribute, or create derivative works
-from the source code, text, images, photos, videos, or data in this project
-without prior written permission from the copyright holder.
+**This repository is published for personal portfolio and deployment purposes only.**
+
+Viewing this repository and running it locally for personal evaluation or learning is fine.
+Reusing the design, copy, photos, videos, data, or code in another project still needs prior written permission from the copyright holder.
+
+No license is granted to use, copy, modify, distribute, or create derivative works from this project beyond the evaluation use above without that permission.
 
 ## II. Architecture
 
