@@ -26,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Sticky navbar: keep hash / scrollIntoView targets just below the bar */
+  scroll-padding-top: var(--nav-h);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -92,7 +94,6 @@ p {
 
 .section {
   padding: 3.75rem 1.5rem;
-  scroll-margin-top: calc(var(--nav-h) + 0.5rem);
 }
 
 .section__inner {
