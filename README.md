@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/banner.jpg" width="800" alt="VisionNext100 Personal Homepage">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/newbanner.jpg" width="800" alt="VisionNext100 Personal Homepage">
     <br>
 </div>
 
@@ -7,11 +7,10 @@
 
 <div align="center">
 
-**English** | [中文](./README.zh-CN.md)
+**English** | [中文](./README.zh-CN.md)  
+https://visionnext100.github.io
 
 </div>
-
-Live site: https://visionnext100.github.io
 
 ## I. Copyright
 
@@ -31,15 +30,15 @@ A Vite SPA: long-scroll home page plus three Life sub-routes. Content is mostly 
     <br>
 </div>
 
-| Layer | Role |
-|-------|------|
-| **Vite + React + TypeScript** | App shell, components, typed content |
-| **React Router** | `/` (hash sections) and `/life/sports|travelling|photography` |
-| **Framer Motion** | Hero / section motion |
-| **Leaflet** | Travel map & sports GPS tracks |
-| **Formspree** | Contact form backend (id via `VITE_FORMSPREE_ID`) |
-| **`src/data/`** | Editable copy, projects, sports, travel, photography |
-| **`public/`** | Watermarked media, GeoJSON, CV — served as static files |
+| Layer                         | Role                                                    |
+| ----------------------------- | ------------------------------------------------------- |
+| **Vite + React + TypeScript** | App shell, components, typed content                    |
+| **React Router**              | `/` (hash sections) and `/life/sports                   | travelling | photography` |
+| **Framer Motion**             | Hero / section motion                                   |
+| **Leaflet**                   | Travel map & sports GPS tracks                          |
+| **Formspree**                 | Contact form backend (id via `VITE_FORMSPREE_ID`)       |
+| **`src/data/`**               | Editable copy, projects, sports, travel, photography    |
+| **`public/`**                 | Watermarked media, GeoJSON, CV — served as static files |
 
 Hand-written CSS (no UI kit). Maps and Life pages load assets from `/images/...` and `/data/...`.
 
@@ -63,11 +62,11 @@ Originals stay on the machine; only processed outputs are committed.
     <br>
 </div>
 
-| Kind | Steps |
-|------|--------|
+| Kind             | Steps                                                                                                                                          |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Sports (GPX)** | `raw/sports/` → `node scripts/process-gpx.mjs` → commit `public/data/sports/` + `sports.generated.json`. Pool swims: edit `sports.ts` by hand. |
-| **Travelling** | `raw/travelling/` → watermark script → register in `travel.ts` (+ GeoJSON under `public/data/travel/` if needed). |
-| **Photography** | `raw/photography/` → watermark → `build-photo-meta.mjs` → add `frame(...)` in `photography.ts`. |
+| **Travelling**   | `raw/travelling/` → watermark script → register in `travel.ts` (+ GeoJSON under `public/data/travel/` if needed).                              |
+| **Photography**  | `raw/photography/` → watermark → `build-photo-meta.mjs` → add `frame(...)` in `photography.ts`.                                                |
 
 ## IV. One-time GitHub setup
 
@@ -108,27 +107,27 @@ npm run preview
 
 ## VI. Site structure
 
-| Area | What it is |
-|------|------------|
-| Home page | Long-scroll sections: About, Skills, Projects, Publications, Internship, Education, Life hub, Contact |
-| `/life/sports` | Activity list + GPS track map / swim board |
-| `/life/travelling` | Interactive map of places visited |
-| `/life/photography` | Coverflow photo gallery |
+| Area                | What it is                                                                                            |
+| ------------------- | ----------------------------------------------------------------------------------------------------- |
+| Home page           | Long-scroll sections: About, Skills, Projects, Publications, Internship, Education, Life hub, Contact |
+| `/life/sports`      | Activity list + GPS track map / swim board                                                            |
+| `/life/travelling`  | Interactive map of places visited                                                                     |
+| `/life/photography` | Coverflow photo gallery                                                                               |
 
 ## VII. Content layout
 
-| Path | Purpose |
-|------|---------|
-| `public/images/profile/` | Profile photo |
-| `public/images/projects/` | Project covers |
-| `public/images/life/` | Life hub cover images |
-| `public/images/travel/` | Travel photos (watermarked) |
-| `public/images/photography/` | Photography (watermarked) |
-| `public/images/readme/` | README diagrams |
-| `public/data/sports/` | Desensitized track GeoJSON |
-| `public/data/travel/` | Region boundary GeoJSON |
-| `public/images/contact/` | Contact illustration |
-| `public/images/brands/` | Internship / school logos |
-| `public/cv/` | Resume PDF |
-| `src/data/` | Editable content |
-| `raw/` · `scripts/` | Local originals & tooling (gitignored) |
+| Path                         | Purpose                                |
+| ---------------------------- | -------------------------------------- |
+| `public/images/profile/`     | Profile photo                          |
+| `public/images/projects/`    | Project covers                         |
+| `public/images/life/`        | Life hub cover images                  |
+| `public/images/travel/`      | Travel photos (watermarked)            |
+| `public/images/photography/` | Photography (watermarked)              |
+| `public/images/readme/`      | README diagrams                        |
+| `public/data/sports/`        | Desensitized track GeoJSON             |
+| `public/data/travel/`        | Region boundary GeoJSON                |
+| `public/images/contact/`     | Contact illustration                   |
+| `public/images/brands/`      | Internship / school logos              |
+| `public/cv/`                 | Resume PDF                             |
+| `src/data/`                  | Editable content                       |
+| `raw/` · `scripts/`          | Local originals & tooling (gitignored) |
