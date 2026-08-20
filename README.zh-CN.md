@@ -23,13 +23,26 @@ https://visionnext100.github.io
 
 除上述了解或学习用途外，未经版权所有者事先书面许可，不得使用、复制、修改、分发本项目内容，也不得基于上述内容创作衍生作品。
 
-## II. 技术架构
+## II. 架构总览
 
-基于 Vite + React 的个人作品集站点：长页主站，以及包含 Sports、Travelling 和 Photography 的 Life 子页。
+本站是 Vite + React + TypeScript 单页应用：长页主站（`/`，锚点分区），以及 `/life/*` 下的 Sports / Travelling / Photography 子页。文案多在 `src/data/`，媒体与 GeoJSON 由 `public/` 提供。联系表单走 Formspree，地图用 Leaflet；经 GitHub Actions 构建后部署到 GitHub Pages。样式为手写 CSS，无 UI 组件库。
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/architecture.jpg" width="800" alt="项目技术架构">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/architecture-detailed.jpg" width="800" alt="详细系统架构">
     <br>
+    <em>端到端总览：SPA 路由与 Life 子页、内容与静态资源、本机工具链，以及 GitHub Actions → Pages 部署路径。</em>
+</div>
+
+## III. 架构分项说明
+
+下面三张图分别放大总览中的技术分层、部署流水线与内容流水线。
+
+### I. 技术分层
+
+<div align="center">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/architecture.jpg" width="800" alt="技术分层">
+    <br>
+    <em>从访客到托管的四层：Browser、Libraries、Content、GitHub Pages。</em>
 </div>
 
 | 层级                          | 作用                                   |
@@ -42,28 +55,26 @@ https://visionnext100.github.io
 | **`src/data/`**               | 站点文案、项目、技能、教育与 Life 数据 |
 | **`public/`**                 | 图片、GeoJSON、简历等静态资源          |
 
-样式为手写 CSS，无 UI 组件库。静态资源从 `/images/...`、`/data/...`、`/cv/...` 提供。
-
-## III. 工作流
-
-### I. 部署（推送 → 上线）
+### II. 部署流水线
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/deploy.jpg" width="800" alt="部署工作流">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/deploy.jpg" width="800" alt="部署流水线">
     <br>
+    <em>推送到 main 后由 Actions 安装、构建、写入 SPA 用 404.html，再发布到 GitHub Pages。</em>
 </div>
 
 需要配置密钥：`VITE_FORMSPREE_ID`（Actions → Secrets）。
 
-### II. 更新站点内容
+### III. 内容流水线
 
 日常改动（About、项目、技能、实习、教育、联系等）主要在 `src/data/*.ts`，以及 `public/images/` 下对应资源。
 
 Life 媒体另有本机流水线：原件留在本机，仓库只提交处理后的成品。
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/pipeline.jpg" width="800" alt="内容流水线">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io/public/images/readme/newpipeline.jpg" width="550" alt="内容流水线">
     <br>
+    <em>仅本机的 raw/ 与 scripts/，产出并提交 public/ 与 src/data/ 中的成品。</em>
 </div>
 
 | 类型     | 步骤                                                                                                                                |
@@ -76,9 +87,9 @@ Life 媒体另有本机流水线：原件留在本机，仓库只提交处理后
 
 ## IV. GitHub 一次性配置
 
-1. 仓库 → **Settings → Pages**
-2. **Build and deployment → Source**：选择 **GitHub Actions**
-3. 仓库 → **Settings → Secrets and variables → Actions**
+1. 仓库 → Settings → Pages
+2. Build and deployment → Source：GitHub Actions
+3. 仓库 → Settings → Secrets and variables → Actions
 4. 新建仓库密钥：
    - Name: `VITE_FORMSPREE_ID`
    - Value: 你的 Formspree 表单 id
@@ -101,7 +112,6 @@ npm run dev
 ```
 
 浏览器打开 http://localhost:5173 即可浏览完整主页。
-
 
 ```bash
 npm run build
