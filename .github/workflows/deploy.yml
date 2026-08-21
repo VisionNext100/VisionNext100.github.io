@@ -34,6 +34,7 @@ jobs:
         run: npm run build
         env:
           VITE_FORMSPREE_ID: ${{ secrets.VITE_FORMSPREE_ID }}
+          VITE_GOATCOUNTER_ENDPOINT: ${{ vars.VITE_GOATCOUNTER_ENDPOINT }}
 
       - name: SPA fallback for GitHub Pages
         run: cp dist/index.html dist/404.html

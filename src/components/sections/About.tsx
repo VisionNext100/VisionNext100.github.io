@@ -1,3 +1,4 @@
+import { useState, type MouseEvent } from 'react'
 import { SITE } from '../../data/site'
 import { SectionReveal } from '../ui/SectionReveal'
 import './About.css'
@@ -24,7 +25,51 @@ function IconCv() {
   )
 }
 
+const CV_SOON = 'The resume will be available soon.'
+
+async function cvExists(): Promise<boolean> {
+  try {
+    const head = await fetch(SITE.cvPath, { method: 'HEAD', cache: 'no-store' })
+    if (head.ok) return true
+    // Some hosts are picky about HEAD; fall back to a tiny GET probe.
+    const get = await fetch(SITE.cvPath, {
+      method: 'GET',
+      cache: 'no-store',
+      headers: { Range: 'bytes=0-0' },
+    })
+    return get.ok || get.status === 206
+  } catch {
+    return false
+  }
+}
+
 export function About() {
+  const [cvNote, setCvNote] = useState<string | null>(null)
+  const [cvBusy, setCvBusy] = useState(false)
+
+  async function onCvClick(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault()
+    if (cvBusy) return
+    setCvBusy(true)
+    setCvNote(null)
+    try {
+      const ok = await cvExists()
+      if (!ok) {
+        setCvNote(CV_SOON)
+        return
+      }
+      const link = document.createElement('a')
+      link.href = SITE.cvPath
+      link.download = 'YehanWANG_CV.pdf'
+      link.rel = 'noreferrer'
+      document.body.appendChild(link)
+      link.click()
+      link.remove()
+    } finally {
+      setCvBusy(false)
+    }
+  }
+
   return (
     <section id="about" className="section section--alt">
       <div className="section__inner">
@@ -78,9 +123,8 @@ export function About() {
               <a
                 className="about__chip"
                 href={SITE.cvPath}
-                download
-                target="_blank"
-                rel="noreferrer"
+                onClick={onCvClick}
+                aria-busy={cvBusy}
               >
                 <span className="about__icon">
                   <IconCv />
@@ -90,6 +134,11 @@ export function About() {
                   Download CV
                 </span>
               </a>
+              {cvNote ? (
+                <p className="about__cv-note" role="status">
+                  {cvNote}
+                </p>
+              ) : null}
             </aside>
           </div>
         </SectionReveal>

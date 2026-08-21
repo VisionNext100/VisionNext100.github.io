@@ -28,7 +28,7 @@ No license is granted to use, copy, modify, distribute, or create derivative wor
 This site is a Vite + React + TypeScript SPA: a long-scroll home page (`/`) with section anchors, plus Life sub-routes under `/life/*` for sports, travel, and photography. Content lives mainly in `src/data/`; media and GeoJSON ship from `public/`. The browser app talks to Formspree for contact and Leaflet for maps, and is built by GitHub Actions then hosted on GitHub Pages. Hand-written CSS only—no UI kit.
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed.jpg" width="800" alt="Detailed system architecture">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed.jpg" width="900" alt="Detailed system architecture">
     <br>
     <em>End-to-end view: SPA routes and Life pages, content/assets, local tooling, and the GitHub Actions → Pages deploy path.</em>
 </div>

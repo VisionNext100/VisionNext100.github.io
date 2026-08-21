@@ -28,7 +28,7 @@ https://visionnext100.github.io
 本站是 Vite + React + TypeScript 单页应用：长页主站（`/`，锚点分区），以及 `/life/*` 下的 Sports / Travelling / Photography 子页。文案多在 `src/data/`，媒体与 GeoJSON 由 `public/` 提供。联系表单走 Formspree，地图用 Leaflet；经 GitHub Actions 构建后部署到 GitHub Pages。样式为手写 CSS，无 UI 组件库。
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed.jpg" width="800" alt="详细系统架构">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed.jpg" width="900" alt="详细系统架构">
     <br>
     <em>端到端总览：SPA 路由与 Life 子页、内容与静态资源、本机工具链，以及 GitHub Actions → Pages 部署路径。</em>
 </div>
