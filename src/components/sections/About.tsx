@@ -27,17 +27,23 @@ function IconCv() {
 
 const CV_SOON = 'The resume will be available soon.'
 
+function looksLikePdf(res: Response): boolean {
+  const type = res.headers.get('content-type') ?? ''
+  // Vite/SPA hosts often return 200 text/html for missing paths — status alone is not enough.
+  return (res.ok || res.status === 206) && /application\/pdf/i.test(type)
+}
+
 async function cvExists(): Promise<boolean> {
   try {
     const head = await fetch(SITE.cvPath, { method: 'HEAD', cache: 'no-store' })
-    if (head.ok) return true
+    if (looksLikePdf(head)) return true
     // Some hosts are picky about HEAD; fall back to a tiny GET probe.
     const get = await fetch(SITE.cvPath, {
       method: 'GET',
       cache: 'no-store',
       headers: { Range: 'bytes=0-0' },
     })
-    return get.ok || get.status === 206
+    return looksLikePdf(get)
   } catch {
     return false
   }
