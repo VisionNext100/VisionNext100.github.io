@@ -40,7 +40,7 @@ The three diagrams below zoom in on parts of the overview: the technology layers
 ### I. Stack layers
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v1.2.0.jpg" width="700" alt="Stack layers">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v1.2.0.jpg" width="600" alt="Stack layers">
     <br>
     <em>Layers from visitor to host: Browser, Libraries, Content, and GitHub Pages.</em>
 </div>

@@ -40,7 +40,7 @@ https://visionnext100.github.io
 ### I. 技术分层
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v1.2.0.jpg" width="700" alt="技术分层">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v1.2.0.jpg" width="600" alt="技术分层">
     <br>
     <em>从访客到托管的分层：Browser、Libraries、Content、GitHub Pages。</em>
 </div>
