@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 import { Navbar } from './components/Navbar'
+import { IntroOverlay } from './components/ui/IntroOverlay'
 import { Footer } from './components/Footer'
 import { Home } from './components/sections/Home'
 import { About } from './components/sections/About'
@@ -36,8 +39,19 @@ function HomePage() {
 }
 
 export default function App() {
+  // Splash plays on a fresh load of the home page only, so Life sub-pages and
+  // in-app navigation never wait for it.
+  const [showIntro, setShowIntro] = useState(
+    () => window.location.pathname === '/',
+  )
+
   return (
     <>
+      <AnimatePresence>
+        {showIntro ? (
+          <IntroOverlay onDone={() => setShowIntro(false)} />
+        ) : null}
+      </AnimatePresence>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

@@ -51,10 +51,15 @@ export function TrackMap({ geojsonUrl, className }: Props) {
       scrollWheelZoom: false,
     }).setView([31.23, 121.47], 13)
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap &copy; CARTO',
-      maxZoom: 19,
-    }).addTo(map)
+    L.tileLayer(
+      'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
+      {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://www.cyclosm.org">CyclOSM</a>',
+        subdomains: 'abc',
+        maxZoom: 20,
+      },
+    ).addTo(map)
 
     mapRef.current = map
     const onResize = () => map.invalidateSize()
@@ -116,7 +121,7 @@ export function TrackMap({ geojsonUrl, className }: Props) {
       map.invalidateSize()
 
       const lineStyle: L.PolylineOptions = {
-        color: '#1f7a70',
+        color: '#a66b4d',
         weight: 3.5,
         opacity: 0.92,
         lineCap: 'round',
@@ -129,16 +134,16 @@ export function TrackMap({ geojsonUrl, className }: Props) {
 
         const start = L.circleMarker(latlngs[0], {
           radius: 5,
-          color: '#f4f7f9',
+          color: '#fffcfa',
           weight: 2,
-          fillColor: '#1f7a70',
+          fillColor: '#c4896a',
           fillOpacity: 1,
         }).addTo(map)
         const end = L.circleMarker(latlngs[latlngs.length - 1], {
           radius: 5,
-          color: '#f4f7f9',
+          color: '#fffcfa',
           weight: 2,
-          fillColor: '#1b3a4b',
+          fillColor: '#3d3630',
           fillOpacity: 1,
         }).addTo(map)
         markersRef.current = [start, end]
@@ -180,7 +185,7 @@ export function TrackMap({ geojsonUrl, className }: Props) {
       }
 
       // Let basemap tiles settle before animating the track.
-      delayTimer = window.setTimeout(startDraw, 320)
+      delayTimer = window.setTimeout(startDraw, 700)
     })()
 
     return () => {

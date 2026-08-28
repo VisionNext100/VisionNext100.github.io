@@ -52,13 +52,13 @@
   transform: translateX(-50%);
   background: linear-gradient(
     180deg,
-    rgba(42, 157, 143, 0) 0%,
-    rgba(42, 157, 143, 0.22) 28%,
-    rgba(42, 157, 143, 0.55) 42%,
-    #1f7a70 52%,
-    #1b3a4b 72%,
-    rgba(27, 58, 75, 0.55) 88%,
-    rgba(27, 58, 75, 0) 100%
+    rgba(196, 137, 106, 0) 0%,
+    rgba(196, 137, 106, 0.22) 28%,
+    rgba(196, 137, 106, 0.55) 42%,
+    #a66b4d 52%,
+    #3d3630 72%,
+    rgba(61, 54, 48, 0.55) 88%,
+    rgba(61, 54, 48, 0) 100%
   );
 }
 
@@ -69,9 +69,9 @@
   height: 12px;
   margin-top: 1.55rem;
   border-radius: 50%;
-  background: #1b3a4b;
+  background: #3d3630;
   border: 3px solid #fff;
-  box-shadow: 0 0 0 2px rgba(31, 122, 112, 0.45);
+  box-shadow: 0 0 0 2px rgba(166, 107, 77, 0.45);
   flex-shrink: 0;
 }
 

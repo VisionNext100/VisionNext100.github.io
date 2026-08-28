@@ -81,7 +81,7 @@ export function ParticleField() {
 
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(27, 58, 75, 0.42)'
+        ctx.fillStyle = 'rgba(140, 120, 105, 0.28)'
         ctx.fill()
       }
 
@@ -91,8 +91,8 @@ export function ParticleField() {
           const b = particles[j]
           const d = Math.hypot(a.x - b.x, a.y - b.y)
           if (d < 125) {
-            ctx.strokeStyle = `rgba(42, 157, 143, ${0.32 * (1 - d / 125)})`
-            ctx.lineWidth = 1.15
+            ctx.strokeStyle = `rgba(196, 137, 106, ${0.2 * (1 - d / 125)})`
+            ctx.lineWidth = 1.05
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(b.x, b.y)
@@ -111,8 +111,8 @@ export function ParticleField() {
           mouse.current.y,
           90,
         )
-        g.addColorStop(0, 'rgba(42, 157, 143, 0.12)')
-        g.addColorStop(1, 'rgba(42, 157, 143, 0)')
+        g.addColorStop(0, 'rgba(196, 137, 106, 0.08)')
+        g.addColorStop(1, 'rgba(196, 137, 106, 0)')
         ctx.fillStyle = g
         ctx.beginPath()
         ctx.arc(mouse.current.x, mouse.current.y, 90, 0, Math.PI * 2)

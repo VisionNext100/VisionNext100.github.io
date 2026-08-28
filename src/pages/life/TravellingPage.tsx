@@ -7,9 +7,9 @@ import { flightArc, arcArrowPose, shiftArc, crossesAntimeridian } from '../../da
 import { LifePageShell } from '../../components/life/LifePageShell'
 import './TravellingPage.css'
 
-const FILL = '#0f766e'
-const STROKE = '#14b8a6'
-const FLIGHT = '#93c5fd'
+const FILL = '#b88468'
+const STROKE = '#d2a890'
+const FLIGHT = '#d4b896'
 const CARD_WIDTH = 260
 const CARD_GAP = 16
 const EDGE = 12
@@ -104,12 +104,10 @@ export function TravellingPage() {
     L.control.zoom({ position: 'bottomright' }).addTo(map)
 
     L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
       {
-        attribution: '&copy; OpenStreetMap &copy; CARTO',
-        subdomains: 'abcd',
-        maxZoom: 20,
-        maxNativeZoom: 20,
+        attribution: 'Tiles &copy; Esri',
+        maxZoom: 19,
       },
     ).addTo(map)
 

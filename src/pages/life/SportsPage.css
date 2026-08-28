@@ -18,7 +18,7 @@
 .sports-filters__btn.is-active,
 .sports-filters__btn:hover {
   color: var(--ink);
-  border-color: rgba(42, 157, 143, 0.45);
+  border-color: rgba(196, 137, 106, 0.45);
   background: var(--accent-soft);
 }
 
@@ -64,7 +64,7 @@
 
 .sports-list__item:hover,
 .sports-list__item.is-active {
-  background: rgba(42, 157, 143, 0.08);
+  background: rgba(196, 137, 106, 0.08);
 }
 
 .sports-list__top {

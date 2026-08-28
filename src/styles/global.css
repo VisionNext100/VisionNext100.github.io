@@ -1,15 +1,16 @@
 :root {
-  --bg: #f4f7f9;
-  --bg-elevated: #ffffff;
-  --bg-muted: #e8eef2;
-  --ink: #1b3a4b;
-  --ink-soft: #4a6674;
-  --ink-faint: #7a93a0;
-  --accent: #2a9d8f;
-  --accent-deep: #1f7a70;
-  --accent-soft: rgba(42, 157, 143, 0.12);
-  --line: rgba(27, 58, 75, 0.12);
-  --shadow: 0 12px 40px rgba(27, 58, 75, 0.08);
+  /* Warm parchment theme keyed to ~#F3EFEA — softer / lighter pass */
+  --bg: #f6f3ef;
+  --bg-elevated: #fffcfa;
+  --bg-muted: #ebe6df;
+  --ink: #3d3630;
+  --ink-soft: #6f6660;
+  --ink-faint: #9c9289;
+  --accent: #c4896a;
+  --accent-deep: #a66b4d;
+  --accent-soft: rgba(196, 137, 106, 0.12);
+  --line: rgba(61, 54, 48, 0.1);
+  --shadow: 0 12px 40px rgba(61, 54, 48, 0.06);
   --nav-h: 4.25rem;
   --radius: 14px;
   --font-display: 'Times New Roman', Times, 'Liberation Serif', 'Noto Serif', serif;
@@ -49,8 +50,8 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(42, 157, 143, 0.1), transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, rgba(27, 58, 75, 0.08), transparent 50%),
+    radial-gradient(1200px 600px at 10% -10%, rgba(196, 137, 106, 0.08), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(61, 54, 48, 0.04), transparent 50%),
     var(--bg);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -119,5 +120,5 @@ p {
 
 .section--alt {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(232, 238, 242, 0.65));
+    linear-gradient(180deg, rgba(255, 252, 250, 0.6), rgba(235, 230, 223, 0.55));
 }

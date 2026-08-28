@@ -35,7 +35,7 @@
 
 .skills__chip:hover {
   transform: translateY(-3px);
-  border-color: rgba(42, 157, 143, 0.35);
+  border-color: rgba(196, 137, 106, 0.35);
   box-shadow: var(--shadow);
 }
 
