@@ -5,7 +5,6 @@ import { Navbar } from './components/Navbar'
 import { IntroOverlay } from './components/ui/IntroOverlay'
 import { Footer } from './components/Footer'
 import { Home } from './components/sections/Home'
-import { About } from './components/sections/About'
 import { Skills } from './components/sections/Skills'
 import { Projects } from './components/sections/Projects'
 import { Publications } from './components/sections/Publications'
@@ -18,13 +17,12 @@ import { TravellingPage } from './pages/life/TravellingPage'
 import { PhotographyPage } from './pages/life/PhotographyPage'
 import { useHashScroll } from './hooks/useHashScroll'
 
-function HomePage() {
+function HomePage({ active }: { active: boolean }) {
   useHashScroll()
   return (
     <>
       <main>
-        <Home />
-        <About />
+        <Home active={active} />
         <Skills />
         <Projects />
         <Publications />
@@ -54,7 +52,7 @@ export default function App() {
       </AnimatePresence>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage active={!showIntro} />} />
         <Route path="/life/sports" element={<SportsPage />} />
         <Route path="/life/travelling" element={<TravellingPage />} />
         <Route path="/life/photography" element={<PhotographyPage />} />
