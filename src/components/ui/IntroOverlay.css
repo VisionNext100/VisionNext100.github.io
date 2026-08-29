@@ -1,4 +1,6 @@
 .intro {
+  /* Lighter than the site background; the lit rim carries the reveal. */
+  --intro-bg: #fdfaf5;
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -7,9 +9,77 @@
   justify-content: center;
   padding: 1.5rem;
   overflow: hidden;
-  background:
-    radial-gradient(900px 520px at 50% 45%, rgba(255, 252, 250, 0.9), transparent 70%),
-    var(--bg);
+}
+
+/* Solid splash backdrop; the hexagonal hole in it opens onto the site. */
+.intro__cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.intro__cover-fill {
+  fill: var(--intro-bg);
+}
+
+.intro__cover-edge {
+  fill: none;
+  stroke: var(--accent-deep);
+  stroke-width: 1.75;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Soft shadow just inside the opening, so the shape reads on low contrast. */
+.intro__cover-glow {
+  fill: none;
+  stroke: rgba(61, 54, 48, 0.3);
+  stroke-width: 10;
+  filter: blur(7px);
+}
+
+.intro__geometry {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Wrapper carries the anchor box plus the entry / exit sweep. */
+.intro__orbit {
+  position: absolute;
+  display: block;
+}
+
+.intro__shape {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Multiply keeps saturated blocks tied to the warm backdrop where they overlap. */
+  mix-blend-mode: multiply;
+  filter: blur(0.4px);
+}
+
+/* Arch: flat base, generous rounded crown. */
+.intro__shape--dome {
+  border-radius: 50% 50% 44% 44% / 58% 58% 36% 36%;
+}
+
+/* Squircle: rounded rectangle with heavy corner radii. */
+.intro__shape--squircle {
+  border-radius: 34%;
+}
+
+/* Leaf: two sharp-ish corners opposite two wide ones. */
+.intro__shape--leaf {
+  border-radius: 58% 14% 58% 14%;
+}
+
+/* Triangle: drawn as SVG so the corners can be genuinely rounded. */
+.intro__polygon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
 .intro__stars {
