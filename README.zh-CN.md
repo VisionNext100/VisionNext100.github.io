@@ -129,12 +129,12 @@ npm run preview
 
 ## VI. 站点结构
 
-| 区域                | 内容                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------- |
-| `/` 主页            | 长页作品集：Home、About、Skills、Projects、Publications、Internship、Education、Life、Contact |
-| `/life/sports`      | 运动记录、GPS 轨迹、游泳看板                                                                  |
-| `/life/travelling`  | 旅行交互地图                                                                                  |
-| `/life/photography` | Coverflow 摄影展示                                                                            |
+| 区域                | 内容                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------- |
+| `/` 主页            | 长页作品集：Home、Skills、Projects、Publications、Internship、Education、Life、Contact |
+| `/life/sports`      | 运动记录、GPS 轨迹、游泳看板                                                           |
+| `/life/travelling`  | 旅行交互地图                                                                           |
+| `/life/photography` | Coverflow 摄影展示                                                                     |
 
 ## VII. 内容目录
 

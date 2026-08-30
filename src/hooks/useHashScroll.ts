@@ -7,11 +7,11 @@ function navOffsetPx() {
 }
 
 /** Scroll to hash targets after client-side navigation (e.g. /life → /#life). */
-export function useHashScroll() {
+export function useHashScroll(ready = true) {
   const { pathname, hash } = useLocation()
 
   useEffect(() => {
-    if (pathname !== '/' || !hash) return
+    if (!ready || pathname !== '/' || !hash) return
     const id = hash.replace(/^#/, '')
 
     const t = window.setTimeout(() => {
@@ -25,5 +25,5 @@ export function useHashScroll() {
       window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
     }, 40)
     return () => window.clearTimeout(t)
-  }, [pathname, hash])
+  }, [pathname, hash, ready])
 }

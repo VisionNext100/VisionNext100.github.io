@@ -1,21 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { copyText } from '../../lib/clipboard'
 
 /** Same copy-then-toast pattern used by the footer GitHub / Email links. */
 export function useCopyToast() {
   const [toast, setToast] = useState<string | null>(null)
+  const timer = useRef<number>(0)
+
+  useEffect(() => () => window.clearTimeout(timer.current), [])
+
+  function show(message: string) {
+    window.clearTimeout(timer.current)
+    setToast(message)
+    timer.current = window.setTimeout(() => setToast(null), 1800)
+  }
 
   async function copy(label: string, value: string) {
     try {
       await copyText(value)
-      setToast(`${label} copied`)
+      show(`${label} copied`)
     } catch {
-      setToast(`Could not copy ${label}`)
+      show(`Could not copy ${label}`)
     }
-    window.setTimeout(() => setToast(null), 1800)
   }
 
-  return { toast, copy }
+  return { toast, copy, show }
 }
 
 export function CopyToast({ message }: { message: string | null }) {

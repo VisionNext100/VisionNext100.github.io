@@ -128,12 +128,12 @@ npm run preview
 
 ## VI. Site structure
 
-| Area                | What it is                                                                                               |
-| ------------------- | -------------------------------------------------------------------------------------------------------- |
-| `/` Home            | Long-scroll portfolio: Home, About, Skills, Projects, Publications, Internship, Education, Life, Contact |
-| `/life/sports`      | Sports log, GPS tracks, swim board                                                                       |
-| `/life/travelling`  | Interactive travel map                                                                                   |
-| `/life/photography` | Coverflow photo gallery                                                                                  |
+| Area                | What it is                                                                                        |
+| ------------------- | ------------------------------------------------------------------------------------------------- |
+| `/` Home            | Long-scroll portfolio: Home, Skills, Projects, Publications, Internship, Education, Life, Contact |
+| `/life/sports`      | Sports log, GPS tracks, swim board                                                                |
+| `/life/travelling`  | Interactive travel map                                                                            |
+| `/life/photography` | Coverflow photo gallery                                                                           |
 
 ## VII. Content layout
 

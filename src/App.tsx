@@ -18,7 +18,7 @@ import { PhotographyPage } from './pages/life/PhotographyPage'
 import { useHashScroll } from './hooks/useHashScroll'
 
 function HomePage({ active }: { active: boolean }) {
-  useHashScroll()
+  useHashScroll(active)
   return (
     <>
       <main>

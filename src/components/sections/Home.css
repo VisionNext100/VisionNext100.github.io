@@ -199,18 +199,6 @@
   height: 15px;
 }
 
-.home__cv-note {
-  margin: 0;
-  max-width: 16rem;
-  padding: 0.55rem 0.75rem;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  background: rgba(61, 54, 48, 0.04);
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-  line-height: 1.45;
-}
-
 .home__details {
   display: flex;
   flex-direction: column;

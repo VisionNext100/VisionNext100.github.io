@@ -46,19 +46,17 @@ export function Home({ active = true }: Props) {
     enabled: active,
     reduceMotion: Boolean(reduce),
   })
-  const [cvNote, setCvNote] = useState<string | null>(null)
   const [cvBusy, setCvBusy] = useState(false)
-  const { toast, copy } = useCopyToast()
+  const { toast, copy, show } = useCopyToast()
 
   async function onCvClick(event: MouseEvent<HTMLAnchorElement>) {
     event.preventDefault()
     if (cvBusy) return
     setCvBusy(true)
-    setCvNote(null)
     try {
       const ok = await cvExists()
       if (!ok) {
-        setCvNote(CV_SOON)
+        show(CV_SOON)
         return
       }
       const link = document.createElement('a')
@@ -144,11 +142,6 @@ export function Home({ active = true }: Props) {
                   Download CV
                 </span>
               </a>
-              {cvNote ? (
-                <p className="home__cv-note" role="status">
-                  {cvNote}
-                </p>
-              ) : null}
             </div>
           </div>
 
