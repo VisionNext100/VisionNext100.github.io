@@ -28,7 +28,7 @@ No license is granted to use, copy, modify, distribute, or create derivative wor
 This site is a Vite + React + TypeScript SPA: a long-scroll home page (`/`) with section anchors, plus Life sub-routes under `/life/*` for sports, travel, and photography. Content lives mainly in `src/data/`; media and GeoJSON ship from `public/`. Contact goes through Formspree; maps use Leaflet; privacy-friendly page views go to GoatCounter. Built by GitHub Actions and hosted on GitHub Pages. Hand-written CSS only—no UI kit.
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed-v1.2.0.jpg" width="1000" alt="Detailed system architecture">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed-v2.0.0.jpg" width="1000" alt="Detailed system architecture">
     <br>
     <em>End-to-end view: SPA routes and Life pages, content/assets, local tooling, Formspree + GoatCounter, and the GitHub Actions → Pages deploy path.</em>
 </div>
@@ -40,7 +40,7 @@ The three diagrams below zoom in on parts of the overview: the technology layers
 ### I. Stack layers
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v1.2.0.jpg" width="600" alt="Stack layers">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v2.0.0.jpg" width="600" alt="Stack layers">
     <br>
     <em>Layers from visitor to host: Browser, Libraries, Content, and GitHub Pages.</em>
 </div>
@@ -59,7 +59,7 @@ The three diagrams below zoom in on parts of the overview: the technology layers
 ### II. Deploy pipeline
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/deploy-v1.2.0.jpg" width="700" alt="Deploy pipeline">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/deploy-v2.0.0.jpg" width="700" alt="Deploy pipeline">
     <br>
     <em>Push to main triggers Actions: installation, build for Formspree and GoatCounter, SPA 404 fallback, then GitHub Pages.</em>
 </div>
@@ -76,7 +76,7 @@ Day-to-day edits (About, projects, skills, internship, education, contact) live 
 Life media has an extra local pipeline: originals stay on the machine; only processed outputs are committed.
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/pipeline-v1.2.0.jpg" width="550" alt="Content pipeline">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/pipeline-v2.0.0.jpg" width="550" alt="Content pipeline">
     <br>
     <em>Local-only raw/ and scripts/ feed committed public/ and src/data/ outputs.</em>
 </div>

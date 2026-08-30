@@ -28,7 +28,7 @@ https://visionnext100.github.io
 本站是 Vite + React + TypeScript 单页应用：长页主站（`/`，锚点分区），以及 `/life/*` 下的 Sports / Travelling / Photography 子页。文案多在 `src/data/`，媒体与 GeoJSON 由 `public/` 提供。联系表单走 Formspree，地图用 Leaflet；页面浏览量通过 GoatCounter 静默上报。经 GitHub Actions 构建后部署到 GitHub Pages。样式为手写 CSS，无 UI 组件库。
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed-v1.2.0.jpg" width="1000" alt="详细系统架构">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-detailed-v2.0.0.jpg" width="1000" alt="详细系统架构">
     <br>
     <em>端到端总览：SPA 路由与 Life 子页、内容与静态资源、本机工具链、Formspree + GoatCounter，以及 GitHub Actions → Pages 部署路径。</em>
 </div>
@@ -40,7 +40,7 @@ https://visionnext100.github.io
 ### I. 技术分层
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v1.2.0.jpg" width="600" alt="技术分层">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/architecture-v2.0.0.jpg" width="600" alt="技术分层">
     <br>
     <em>从访客到托管的分层：Browser、Libraries、Content、GitHub Pages。</em>
 </div>
@@ -59,7 +59,7 @@ https://visionnext100.github.io
 ### II. 部署流水线
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/deploy-v1.2.0.jpg" width="700" alt="部署流水线">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/deploy-v2.0.0.jpg" width="700" alt="部署流水线">
     <br>
     <em>推送到 main 后由 Actions 安装、构建 Formspree 和 GoatCounter、写入 SPA 用 404.html，再发布到 GitHub Pages。</em>
 </div>
@@ -76,7 +76,7 @@ https://visionnext100.github.io
 Life 媒体另有本机流水线：原件留在本机，仓库只提交处理后的成品。
 
 <div align="center">
-    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/pipeline-v1.2.0.jpg" width="550" alt="内容流水线">
+    <img src="https://cdn.jsdelivr.net/gh/VisionNext100/VisionNext100.github.io@main/public/images/readme/pipeline-v2.0.0.jpg" width="550" alt="内容流水线">
     <br>
     <em>仅本机的 raw/ 与 scripts/，产出并提交 public/ 与 src/data/ 中的成品。</em>
 </div>
