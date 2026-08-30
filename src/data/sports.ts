@@ -66,11 +66,21 @@ const swimming: SportActivity[] = [
     id: 'swim-2026-08-20',
     type: 'swimming',
     date: '2026-08-20',
-    distanceKm: 1.8,                    
-    durationSec: 46 * 60 + 39,           
+    distanceKm: 1.8,
+    durationSec: 46 * 60 + 39,
     durationLabel: formatDuration(46 * 60 + 39),
     venue: 'ECNU Putuo Campus Swimming Pool',
     swolf: 74,
+  },
+  {
+    id: 'swim-2026-08-23',
+    type: 'swimming',
+    date: '2026-08-23',
+    distanceKm: 2.0,
+    durationSec: 48 * 60 + 7,
+    durationLabel: formatDuration(48 * 60 + 7),
+    venue: 'ECNU Putuo Campus Swimming Pool',
+    swolf: 66,
   },
 ]
 
