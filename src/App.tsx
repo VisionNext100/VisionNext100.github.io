@@ -16,6 +16,7 @@ import { SportsPage } from './pages/life/SportsPage'
 import { TravellingPage } from './pages/life/TravellingPage'
 import { PhotographyPage } from './pages/life/PhotographyPage'
 import { useHashScroll } from './hooks/useHashScroll'
+import { useImageGuard } from './hooks/useImageGuard'
 
 function HomePage({ active }: { active: boolean }) {
   useHashScroll(active)
@@ -37,6 +38,7 @@ function HomePage({ active }: { active: boolean }) {
 }
 
 export default function App() {
+  useImageGuard()
   // Splash plays on a fresh load of the home page only, so Life sub-pages and
   // in-app navigation never wait for it.
   const [showIntro, setShowIntro] = useState(
