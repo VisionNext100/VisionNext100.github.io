@@ -44,6 +44,11 @@
   background: #ebe6df;
 }
 
+.travel-map .leaflet-container img.leaflet-tile {
+  max-width: none;
+  max-height: none;
+}
+
 .travel-enter {
   position: absolute;
   top: 1.1rem;

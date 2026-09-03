@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css'
 import { travelPlaces, travelRegions, travelFlights, type TravelPlace } from '../../data/travel'
 import { flightArc, arcArrowPose, shiftArc, crossesAntimeridian } from '../../data/flightArc'
 import { LifePageShell } from '../../components/life/LifePageShell'
+import { addStreetBasemap } from '../../lib/basemap'
 import './TravellingPage.css'
 
 const FILL = '#b88468'
@@ -102,14 +103,7 @@ export function TravellingPage() {
     }).setView([30, 10], 2)
 
     L.control.zoom({ position: 'bottomright' }).addTo(map)
-
-    L.tileLayer(
-      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-      {
-        attribution: 'Tiles &copy; Esri',
-        maxZoom: 19,
-      },
-    ).addTo(map)
+    const removeBasemap = addStreetBasemap(map)
 
     const container = map.getContainer()
     const stopPageScroll = (e: WheelEvent) => {
@@ -336,6 +330,7 @@ export function TravellingPage() {
 
     return () => {
       cancelled = true
+      removeBasemap()
       container.removeEventListener('wheel', stopPageScroll)
       map.off('zoom move', onMapViewChange)
       if (hoverTimer.current != null) window.clearTimeout(hoverTimer.current)

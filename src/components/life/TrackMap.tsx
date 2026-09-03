@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import { addTrackBasemap } from '../../lib/basemap'
 
 type Props = {
   geojsonUrl?: string
@@ -51,15 +52,7 @@ export function TrackMap({ geojsonUrl, className }: Props) {
       scrollWheelZoom: false,
     }).setView([31.23, 121.47], 13)
 
-    L.tileLayer(
-      'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
-      {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://www.cyclosm.org">CyclOSM</a>',
-        subdomains: 'abc',
-        maxZoom: 20,
-      },
-    ).addTo(map)
+    const removeBasemap = addTrackBasemap(map)
 
     mapRef.current = map
     const onResize = () => map.invalidateSize()
@@ -69,6 +62,7 @@ export function TrackMap({ geojsonUrl, className }: Props) {
     return () => {
       window.removeEventListener('resize', onResize)
       if (rafRef.current != null) cancelAnimationFrame(rafRef.current)
+      removeBasemap()
       map.remove()
       mapRef.current = null
       lineRef.current = null

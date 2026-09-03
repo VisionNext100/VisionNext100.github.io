@@ -130,6 +130,11 @@
   width: 100%;
 }
 
+.sports-detail__map img.leaflet-tile {
+  max-width: none;
+  max-height: none;
+}
+
 .sports-detail__empty {
   flex: 1;
   display: grid;
