@@ -47,22 +47,22 @@ export function Navbar() {
 
         <nav className={`navbar__nav ${open ? 'navbar__nav--open' : ''}`}>
           {NAV_ITEMS.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={sectionHref(item.id)}
+              to={sectionHref(item.id)}
               className={`navbar__link ${active === item.id ? 'is-active' : ''}`}
               onClick={() => setOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href={sectionHref('contact')}
+          <Link
+            to={sectionHref('contact')}
             className="navbar__cta"
             onClick={() => setOpen(false)}
           >
             Get in Touch
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
