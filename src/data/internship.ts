@@ -6,10 +6,8 @@ export const internship = {
   summary:
     'Building domain expert models for purchased-parts processes at the SAIC Volkswagen AI Hackathon 2026—standardizing workflows, monitoring compliance, and accelerating quality problem-solving with knowledge-grounded AI.',
   highlights: [
-    'Train a process expert on VW / PPA standards to give step-by-step guidance for newcomers and unify execution.',
-    'Build automated monitoring for task nodes, reminders, escalation alerts, and PI tracking across purchased-parts workflows.',
-    'Develop intelligent compliance checks that validate process documents and cut manual review load.',
-    'Deliver a problem-solving expert over historical quality cases for retrieval, recommendation, and experience reuse.',
-    'Prototype a supplier-review expert that flags latent quality risks from TR / QPNI signals before parts delivery.',
+    'Build a local hybrid RAG hub (FAISS + BM25 + rerank) so quality knowledge in Confluence and Excel becomes searchable Q&A.',
+    'Clean return-to-plant 8D decks into a structured case table plus grounded RAG for purchased-part quality lookup.',
+    'Add optional Agent Harness, GraphRAG, and RAGAS monitoring so retrieval can iterate, cross documents, and stay measurable.',
   ],
 }
