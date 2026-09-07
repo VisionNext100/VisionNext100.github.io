@@ -51,7 +51,7 @@ The three diagrams below zoom in on parts of the overview: the technology layers
 | ----------------------------- | ------------------------------------------------- |
 | **Vite + React + TypeScript** | App shell, components, typed content              |
 | **React Router**              | `/` section anchors plus `/life/*` sub-routes     |
-| **Framer Motion**             | Hero and section motion                           |
+| **Framer Motion**             | Intro overlay, hero and section motion            |
 | **Leaflet**                   | Maps on Travelling and Sports                     |
 | **Formspree**                 | Contact form                                      |
 | **GoatCounter**               | Privacy-friendly page views                       |
@@ -73,7 +73,7 @@ Build env (optional):
 
 ### III. Content pipeline
 
-Day-to-day edits (About, projects, skills, internship, education, contact) live in `src/data/*.ts` and matching files under `public/images/`.
+Day-to-day edits (Introduction, projects, skills, internship, education, contact) live in `src/data/*.ts` and matching files under `public/images/`.
 
 Life media has an extra local pipeline: originals stay on the machine; only processed outputs are committed.
 
@@ -130,27 +130,27 @@ npm run preview
 
 ## VI. Site structure
 
-| Area                | What it is                                                                                        |
-| ------------------- | ------------------------------------------------------------------------------------------------- |
-| `/` Home            | Long-scroll portfolio: Home, Skills, Projects, Publications, Internship, Education, Life, Contact |
-| `/life/sports`      | Sports log, GPS tracks, swim board                                                                |
-| `/life/travelling`  | Interactive travel map                                                                            |
-| `/life/photography` | Coverflow photo gallery                                                                           |
+| Area                | What it is                                                                                         |
+| ------------------- | -------------------------------------------------------------------------------------------------- |
+| `/` Home            | Long-scroll portfolio: Home, Skills, Projects, Publications, Internship, Education, Life, Contact. |
+| `/life/sports`      | Sports log, GPS tracks, swim board                                                                 |
+| `/life/travelling`  | Interactive travel map                                                                             |
+| `/life/photography` | Coverflow photo gallery                                                                            |
 
 ## VII. Content layout
 
-| Path                         | Purpose                                     |
-| ---------------------------- | ------------------------------------------- |
-| `src/data/`                  | Editable site content                       |
-| `public/images/profile/`     | Profile photo                               |
-| `public/images/projects/`    | Project covers                              |
-| `public/images/brands/`      | Internship / school logos                   |
-| `public/images/contact/`     | Contact illustration                        |
-| `public/cv/`                 | Resume PDF (optional; soft-fail if missing) |
-| `public/images/life/`        | Life hub covers                             |
-| `public/images/travel/`      | Travel photos (watermarked)                 |
-| `public/images/photography/` | Photography (watermarked)                   |
-| `public/data/sports/`        | Desensitized track GeoJSON                  |
-| `public/data/travel/`        | Region boundary GeoJSON                     |
-| `public/images/readme/`      | README diagrams                             |
-| `raw/` · `scripts/`          | Local originals & tooling                   |
+| Path                         | Purpose                    |
+| ---------------------------- | -------------------------- |
+| `src/data/`                  | Editable site content      |
+| `public/images/profile/`     | Profile photo              |
+| `public/images/projects/`    | Project covers             |
+| `public/images/brands/`      | Internship / school logos  |
+| `public/images/contact/`     | Contact illustration       |
+| `public/cv/`                 | Resume PDF                 |
+| `public/images/life/`        | Life hub covers            |
+| `public/images/travel/`      | Watermarked travel photos  |
+| `public/images/photography/` | Watermarked photography    |
+| `public/data/sports/`        | Desensitized track GeoJSON |
+| `public/data/travel/`        | Region boundary GeoJSON    |
+| `public/images/readme/`      | README diagrams            |
+| `raw/` · `scripts/`          | Local originals & tooling  |

@@ -51,7 +51,7 @@ https://visionnext100.github.io
 | ----------------------------- | -------------------------------------- |
 | **Vite + React + TypeScript** | 应用骨架、组件、带类型的内容           |
 | **React Router**              | `/` 锚点分区与 `/life/*` 子路由        |
-| **Framer Motion**             | 首屏与区块动效                         |
+| **Framer Motion**             | 进场遮罩、首屏与区块动效               |
 | **Leaflet**                   | Travelling / Sports 地图               |
 | **Formspree**                 | 联系表单                               |
 | **GoatCounter**               | 隐私友好的页面浏览统计                 |
@@ -73,7 +73,7 @@ https://visionnext100.github.io
 
 ### III. 内容流水线
 
-日常改动（About、项目、技能、实习、教育、联系等）主要在 `src/data/*.ts`，以及 `public/images/` 下对应资源。
+日常改动（简介、项目、技能、实习、教育、联系等）主要在 `src/data/*.ts`，以及 `public/images/` 下对应资源。
 
 Life 媒体另有本机流水线：原件留在本机，仓库只提交处理后的成品。
 
@@ -131,27 +131,27 @@ npm run preview
 
 ## VI. 站点结构
 
-| 区域                | 内容                                                                                   |
-| ------------------- | -------------------------------------------------------------------------------------- |
-| `/` 主页            | 长页作品集：Home、Skills、Projects、Publications、Internship、Education、Life、Contact |
-| `/life/sports`      | 运动记录、GPS 轨迹、游泳看板                                                           |
-| `/life/travelling`  | 旅行交互地图                                                                           |
-| `/life/photography` | Coverflow 摄影展示                                                                     |
+| 区域                | 内容                                                                                     |
+| ------------------- | ---------------------------------------------------------------------------------------- |
+| `/` 主页            | 长页作品集：Home、Skills、Projects、Publications、Internship、Education、Life、Contact。 |
+| `/life/sports`      | 运动记录、GPS 轨迹、游泳看板                                                             |
+| `/life/travelling`  | 旅行交互地图                                                                             |
+| `/life/photography` | Coverflow 摄影展示                                                                       |
 
 ## VII. 内容目录
 
-| 路径                         | 用途                             |
-| ---------------------------- | -------------------------------- |
-| `src/data/`                  | 可编辑站点内容                   |
-| `public/images/profile/`     | 头像                             |
-| `public/images/projects/`    | 项目封面                         |
-| `public/images/brands/`      | 实习 / 学校 logo                 |
-| `public/images/contact/`     | 联系区插图                       |
-| `public/cv/`                 | 简历 PDF（可选；缺失时友好提示） |
-| `public/images/life/`        | Life 三联入口图                  |
-| `public/images/travel/`      | 旅行照片（已加水印）             |
-| `public/images/photography/` | 摄影作品（已加水印）             |
-| `public/data/sports/`        | 脱敏轨迹 GeoJSON                 |
-| `public/data/travel/`        | 地区边界 GeoJSON                 |
-| `public/images/readme/`      | README 配图                      |
-| `raw/` · `scripts/`          | 本机原件与工具                   |
+| 路径                         | 用途             |
+| ---------------------------- | ---------------- |
+| `src/data/`                  | 可编辑站点内容   |
+| `public/images/profile/`     | 头像             |
+| `public/images/projects/`    | 项目封面         |
+| `public/images/brands/`      | 实习 / 学校 logo |
+| `public/images/contact/`     | 联系区插图       |
+| `public/cv/`                 | 简历 PDF         |
+| `public/images/life/`        | Life 三联入口图  |
+| `public/images/travel/`      | 含水印的旅行照片 |
+| `public/images/photography/` | 含水印的摄影作品 |
+| `public/data/sports/`        | 脱敏轨迹 GeoJSON |
+| `public/data/travel/`        | 地区边界 GeoJSON |
+| `public/images/readme/`      | README 配图      |
+| `raw/` · `scripts/`          | 本机原件与工具   |
