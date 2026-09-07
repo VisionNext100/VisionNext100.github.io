@@ -10,6 +10,8 @@
 [English](./README.md) | **中文**  
 https://visionnext100.github.io
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/VisionNext100/VisionNext100.github.io)
+
 </div>
 
 ## I. 版权声明
