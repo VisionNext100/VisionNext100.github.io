@@ -231,6 +231,42 @@ export const travelPlaces: TravelPlace[] = [
     ],
   },
   {
+    id: 'guangxi',
+    name: 'Guangxi',
+    country: 'China',
+    kind: 'province',
+    lat: 22.8170,
+    lng: 108.3669,
+    geojsonUrl: '/data/travel/guangxi.geojson',
+    visits: [
+      { date: '2015-08', photos: ['/images/travel/china-guangxi-201508.jpg'] },
+    ],
+  },
+  {
+    id: 'sichuan',
+    name: 'Sichuan',
+    country: 'China',
+    kind: 'province',
+    lat: 30.5728,
+    lng: 104.0668,
+    geojsonUrl: '/data/travel/sichuan.geojson',
+    visits: [
+      { date: '2020-08', photos: ['/images/travel/china-sichuan-202008.jpg'] },
+    ],
+  },
+  {
+    id: 'chongqing',
+    name: 'Chongqing',
+    country: 'China',
+    kind: 'province',
+    lat: 29.5630,
+    lng: 106.5516,
+    geojsonUrl: '/data/travel/chongqing.geojson',
+    visits: [
+      { date: '2020-08', photos: ['/images/travel/china-chongqing-202008.jpg'] },
+    ],
+  },
+  {
     id: 'nagoya',
     name: 'Nagoya',
     country: 'Japan',

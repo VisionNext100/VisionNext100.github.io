@@ -41,4 +41,5 @@ export const photos: Photo[] = [
   frame('pier-at-dusk', 'Pier at Dusk'),
   frame('brick-and-autumn', 'Brick and Autumn'),
   frame('empty-swings', 'Empty Swings'),
+  frame('above-the-cloud-wilds', 'Above the Cloud Wilds'),
 ]
