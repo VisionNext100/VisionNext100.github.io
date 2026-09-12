@@ -1,5 +1,15 @@
 [
   {
+    "id": "2026-09-12_cycling_49",
+    "type": "cycling",
+    "date": "2026-09-12",
+    "distanceKm": 13.04,
+    "durationSec": 5351,
+    "durationLabel": "89'11''",
+    "geojson": "/data/sports/2026-09-12_cycling_49.geojson",
+    "source": "20260912户外骑行.gpx"
+  },
+  {
     "id": "2026-08-16_walking_48",
     "type": "walking",
     "date": "2026-08-16",
