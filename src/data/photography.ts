@@ -36,10 +36,9 @@ export const photos: Photo[] = [
   frame('rain-on-glass', 'Rain on Glass'),
   frame('autumn-columns', 'Autumn Columns'),
   frame('under-the-canopy', 'Under the Canopy'),
-  frame('night-signal', 'Night Signal'),
+  frame('the-big-dipper', 'The Big Dipper'),
   frame('skyward-pine', 'Skyward Pine'),
   frame('pier-at-dusk', 'Pier at Dusk'),
   frame('brick-and-autumn', 'Brick and Autumn'),
   frame('empty-swings', 'Empty Swings'),
-  frame('above-the-cloud-wilds', 'Above the Cloud Wilds'),
 ]
