@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-10-04_walking_51",
+    "type": "walking",
+    "date": "2026-10-04",
+    "distanceKm": 2.61,
+    "durationSec": 2922,
+    "durationLabel": "48'42''",
+    "geojson": "/data/sports/2026-10-04_walking_51.geojson",
+    "source": "20261004户外步行.gpx"
+  },
+  {
+    "id": "2026-10-01_walking_50",
+    "type": "walking",
+    "date": "2026-10-01",
+    "distanceKm": 2.01,
+    "durationSec": 1676,
+    "durationLabel": "27'56''",
+    "geojson": "/data/sports/2026-10-01_walking_50.geojson",
+    "source": "20261001户外步行.gpx"
+  },
+  {
     "id": "2026-09-12_cycling_49",
     "type": "cycling",
     "date": "2026-09-12",
