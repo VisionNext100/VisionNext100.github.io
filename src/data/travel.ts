@@ -107,7 +107,7 @@ export const travelPlaces: TravelPlace[] = [
     lng: 113.7536,
     geojsonUrl: '/data/travel/henan.geojson',
     visits: [
-      { date: '2026-07', photos: ['/images/travel/china-henan-202607.jpg'] },
+      { date: '2026-10', photos: ['/images/travel/china-henan-202610.jpg'] },
     ],
   },
   {
