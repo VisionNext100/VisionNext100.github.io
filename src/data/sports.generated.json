@@ -1,5 +1,35 @@
 [
   {
+    "id": "2026-10-30_running_54",
+    "type": "running",
+    "date": "2026-10-30",
+    "distanceKm": 4.93,
+    "durationSec": 1493,
+    "durationLabel": "24'53''",
+    "geojson": "/data/sports/2026-10-30_running_54.geojson",
+    "source": "20261030户外跑步.gpx"
+  },
+  {
+    "id": "2026-10-27_walking_53",
+    "type": "walking",
+    "date": "2026-10-27",
+    "distanceKm": 2.4,
+    "durationSec": 2098,
+    "durationLabel": "34'58''",
+    "geojson": "/data/sports/2026-10-27_walking_53.geojson",
+    "source": "20261027户外步行.gpx"
+  },
+  {
+    "id": "2026-10-26_walking_52",
+    "type": "walking",
+    "date": "2026-10-26",
+    "distanceKm": 3.43,
+    "durationSec": 4237,
+    "durationLabel": "70'37''",
+    "geojson": "/data/sports/2026-10-26_walking_52.geojson",
+    "source": "20261026户外步行.gpx"
+  },
+  {
     "id": "2026-10-04_walking_51",
     "type": "walking",
     "date": "2026-10-04",
